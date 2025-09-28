@@ -5,7 +5,7 @@ import datetime as dt
 from zoneinfo import ZoneInfo
 
 json_path = "trainingskalender/trainings.json"
-out_path = "trainingskalender/tritrainings.ics"
+out_path = "tritrainings.ics"
 tz = ZoneInfo("Europe/Berlin")
 
 

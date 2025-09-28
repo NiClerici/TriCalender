@@ -1,199 +1,193 @@
 {
-"calendar": {
-"name": "TriCalender Block 1",
-"timezone": "Europe/Zurich",
-"default_alarm_min": 30,
-"weekly_summary": true
-},
-"trainings": [
-{
-"date": "2025-10-06",
-"start_time": "18:00",
-"duration_min": 55,
-"sport": "Schwimmen",
-"title": "Swim Technik – Atmung & Wasserlage",
-"note": "Drills: Balance/Glide, 6-Kick-Switch, Catch-Up, 3er-Atmung. Fokus: ruhiger Kopf, langer Zug, stabile Wasserlage.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-08",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Velo",
-"title": "Bike Z2 + Kadenz-Spikes",
-"note": "Z2 Dauerfahrt, Kadenz 85–95. 5×1′ hohe Kadenz (100–110) mit 2′ Z2 dazwischen.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-09",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Laufen",
-"title": "Easy Run + Strides",
-"note": "Z2 locker. Am Ende 6×20 s Strides mit voller Erholung.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-11",
-"start_time": "09:00",
-"duration_min": 35,
-"sport": "Kraft",
-"title": "Strength – Core/Hüfte/Glutes",
-"note": "Einbeinige Muster (Split Squats/Step-ups), Core Antirotation (Pallof), Hüftstrecker, Waden exzentrisch. 30–40 min.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-12",
-"start_time": "09:30",
-"duration_min": 80,
-"sport": "Laufen",
-"title": "Long Run Z2",
-"note": "Konstant Z2, weicher Untergrund (Wald/Tartan). Ruhige Nase/Atmung. Fuel leicht antesten (30–40 g KH/h).",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-13",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Schwimmen",
-"title": "Swim Technik – Catch & hoher Ellbogen",
-"note": "8×50 m Technik, 6×50 m Pull (ohne Paddles). Fokus: hoher Ellbogen, sauberes Catch.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-15",
-"start_time": "18:00",
-"duration_min": 75,
-"sport": "Velo",
-"title": "Bike Sweet-Spot light",
-"note": "3×8′ Z3 mit 4′ Z2 Pause. Kadenz 85–95. RPE 5–6.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-16",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Laufen",
-"title": "Steady Run",
-"note": "60′ mit 15′ in der Mitte @Z3 kontrolliert. Rest Z2.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-18",
-"start_time": "09:00",
-"duration_min": 90,
-"sport": "Velo",
-"title": "Long Bike Z2 (Indoor/Gym)",
-"note": "Konstante Z2-Dauerfahrt. Trinkmenge 500–750 ml/h, Fuel 30–40 g KH/h testen. Vorbereitung Brick.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-18",
-"start_time": "10:45",
-"duration_min": 15,
-"sport": "Laufen",
-"title": "Brick Run easy",
-"note": "Direkt nach Bike. 10–15′ locker Z2. Fokus: Schritte schnell, locker.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-19",
-"start_time": "17:00",
-"duration_min": 40,
-"sport": "Kraft",
-"title": "Strength – Stabi & Schulterblatt",
-"note": "Glutes/Hüfte/Core, Schulterblattstabilität. 35–45 min.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-20",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Schwimmen",
-"title": "Swim Serien kurz + Technik",
-"note": "12×100 m locker–moderat, alle 25 m kurz Technikfokus einstreuen. Pausen großzügig.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-22",
-"start_time": "18:00",
-"duration_min": 90,
-"sport": "Velo",
-"title": "Bike Z3 Blöcke + Kadenz",
-"note": "2×12′ Z3 / 5′ Z2. Danach 6×30 s hohe Kadenz mit voller Erholung.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-23",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Laufen",
-"title": "Cruise-Intervalle",
-"note": "5×4′ @Z3 mit 2′ locker. Ein-/Auslaufen in Z2.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-25",
-"start_time": "09:00",
-"duration_min": 40,
-"sport": "Kraft",
-"title": "Strength – Einbein/Antirotation",
-"note": "Split Squats/Step-ups, Pallof Press, Hüftstrecker, Waden exzentrisch.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-26",
-"start_time": "09:30",
-"duration_min": 90,
-"sport": "Laufen",
-"title": "Long Run Z2",
-"note": "Konstant Z2. Fuel 30–40 g KH/h. Weicher Untergrund bevorzugt.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-27",
-"start_time": "18:00",
-"duration_min": 50,
-"sport": "Schwimmen",
-"title": "Swim locker – Technik konsolidieren",
-"note": "45–60′ locker. Drills wiederholen: Atmung, hoher Ellbogen, ruhiger Kopf.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-29",
-"start_time": "18:00",
-"duration_min": 60,
-"sport": "Velo",
-"title": "Bike Z2 + Kadenz-Spikes",
-"note": "Z2 mit 6×1′ hohe Kadenz (100–110) und je 2′ Z2.",
-"use_default_alarm": true
-},
-{
-"date": "2025-10-30",
-"start_time": "18:00",
-"duration_min": 50,
-"sport": "Laufen",
-"title": "Easy Run + Strides",
-"note": "45–50′ Z2. 4×20 s Strides am Ende.",
-"use_default_alarm": true
-},
-{
-"date": "2025-11-01",
-"start_time": "09:00",
-"duration_min": 30,
-"sport": "Kraft",
-"title": "Strength – Deload",
-"note": "30′ reduziert: Core/Hüfte leicht, Mobilität 5–10′.",
-"use_default_alarm": true
-},
-{
-"date": "2025-11-02",
-"start_time": "09:30",
-"duration_min": 90,
-"sport": "Velo",
-"title": "Long Bike Z2 (Deload-Variante)",
-"note": "75–90′ Z2. Lockerer Abschluss der Deload-Woche. Leichte Trink-/Fuel-Routine beibehalten.",
-"use_default_alarm": true
-}
-]
+  "trainings": [
+    {
+      "date": "2025-10-13",
+      "start_time": "18:00",
+      "duration_min": 55,
+      "sport": "Schwimmen",
+      "title": "Swim Technik – Atmung & Wasserlage",
+      "note": "Drills: Balance/Glide, 6-Kick-Switch, Catch-Up, 3er-Atmung. Fokus: ruhiger Kopf, langer Zug, stabile Wasserlage.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-15",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Velo",
+      "title": "Bike Z2 + Kadenz-Spikes",
+      "note": "Z2 Dauerfahrt, Kadenz 85–95. 5×1′ hohe Kadenz (100–110) mit 2′ Z2 dazwischen.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-16",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Laufen",
+      "title": "Easy Run + Strides",
+      "note": "Z2 locker. Am Ende 6×20 s Strides mit voller Erholung.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-18",
+      "start_time": "09:00",
+      "duration_min": 35,
+      "sport": "Kraft",
+      "title": "Strength – Core/Hüfte/Glutes",
+      "note": "Einbeinige Muster (Split Squats/Step-ups), Core Antirotation (Pallof), Hüftstrecker, Waden exzentrisch. 30–40 min.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-19",
+      "start_time": "09:30",
+      "duration_min": 80,
+      "sport": "Laufen",
+      "title": "Long Run Z2",
+      "note": "Konstant Z2, weicher Untergrund (Wald/Tartan). Ruhige Nase/Atmung. Fuel leicht antesten (30–40 g KH/h).",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-20",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Schwimmen",
+      "title": "Swim Technik – Catch & hoher Ellbogen",
+      "note": "8×50 m Technik, 6×50 m Pull (ohne Paddles). Fokus: hoher Ellbogen, sauberes Catch.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-22",
+      "start_time": "18:00",
+      "duration_min": 75,
+      "sport": "Velo",
+      "title": "Bike Sweet-Spot light",
+      "note": "3×8′ Z3 mit 4′ Z2 Pause. Kadenz 85–95. RPE 5–6.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-23",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Laufen",
+      "title": "Steady Run",
+      "note": "60′ mit 15′ in der Mitte @Z3 kontrolliert. Rest Z2.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-25",
+      "start_time": "09:00",
+      "duration_min": 90,
+      "sport": "Velo",
+      "title": "Long Bike Z2 (Indoor/Gym)",
+      "note": "Konstante Z2-Dauerfahrt. Trinkmenge 500–750 ml/h, Fuel 30–40 g KH/h testen. Vorbereitung Brick.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-25",
+      "start_time": "10:45",
+      "duration_min": 15,
+      "sport": "Laufen",
+      "title": "Brick Run easy",
+      "note": "Direkt nach Bike. 10–15′ locker Z2. Fokus: Schritte schnell, locker.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-26",
+      "start_time": "17:00",
+      "duration_min": 40,
+      "sport": "Kraft",
+      "title": "Strength – Stabi & Schulterblatt",
+      "note": "Glutes/Hüfte/Core, Schulterblattstabilität. 35–45 min.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-27",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Schwimmen",
+      "title": "Swim Serien kurz + Technik",
+      "note": "12×100 m locker–moderat, alle 25 m kurz Technikfokus einstreuen. Pausen großzügig.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-29",
+      "start_time": "18:00",
+      "duration_min": 90,
+      "sport": "Velo",
+      "title": "Bike Z3 Blöcke + Kadenz",
+      "note": "2×12′ Z3 / 5′ Z2. Danach 6×30 s hohe Kadenz mit voller Erholung.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-10-30",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Laufen",
+      "title": "Cruise-Intervalle",
+      "note": "5×4′ @Z3 mit 2′ locker. Ein-/Auslaufen in Z2.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-01",
+      "start_time": "09:00",
+      "duration_min": 40,
+      "sport": "Kraft",
+      "title": "Strength – Einbein/Antirotation",
+      "note": "Split Squats/Step-ups, Pallof Press, Hüftstrecker, Waden exzentrisch.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-02",
+      "start_time": "09:30",
+      "duration_min": 90,
+      "sport": "Laufen",
+      "title": "Long Run Z2",
+      "note": "Konstant Z2. Fuel 30–40 g KH/h. Weicher Untergrund bevorzugt.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-03",
+      "start_time": "18:00",
+      "duration_min": 50,
+      "sport": "Schwimmen",
+      "title": "Swim locker – Technik konsolidieren",
+      "note": "45–60′ locker. Drills wiederholen: Atmung, hoher Ellbogen, ruhiger Kopf.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-05",
+      "start_time": "18:00",
+      "duration_min": 60,
+      "sport": "Velo",
+      "title": "Bike Z2 + Kadenz-Spikes",
+      "note": "Z2 mit 6×1′ hohe Kadenz (100–110) und je 2′ Z2.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-06",
+      "start_time": "18:00",
+      "duration_min": 50,
+      "sport": "Laufen",
+      "title": "Easy Run + Strides",
+      "note": "45–50′ Z2. 4×20 s Strides am Ende.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-08",
+      "start_time": "09:00",
+      "duration_min": 30,
+      "sport": "Kraft",
+      "title": "Strength – Deload",
+      "note": "30′ reduziert: Core/Hüfte leicht, Mobilität 5–10′.",
+      "use_default_alarm": true
+    },
+    {
+      "date": "2025-11-09",
+      "start_time": "09:30",
+      "duration_min": 90,
+      "sport": "Velo",
+      "title": "Long Bike Z2 (Deload-Variante)",
+      "note": "75–90′ Z2. Lockerer Abschluss der Deload-Woche. Leichte Trink-/Fuel-Routine beibehalten.",
+      "use_default_alarm": true
+    }
+  ]
 }

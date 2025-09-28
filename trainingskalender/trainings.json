@@ -1,0 +1,44 @@
+{
+  "trainings": [
+    {
+      "date": "2025-10-01",
+      "start_time": "18:30",
+      "duration_min": 60,
+      "sport": "Laufen",
+      "title": "GA1 Dauerlauf",
+      "location": "Aarau",
+      "note": "Locker 60 Min, Pulszone 2",
+      "alarm_min": 30
+    },
+    {
+      "date": "2025-10-03",
+      "start_time": "07:00",
+      "duration_min": 45,
+      "sport": "Schwimmen",
+      "title": "Technik-Drills",
+      "location": "Hallenbad Brugg",
+      "note": "Kraul-Technik, 6×50m Technikübungen",
+      "alarm_min": 60
+    },
+    {
+      "date": "2025-10-05",
+      "start_time": "09:00",
+      "duration_min": 120,
+      "sport": "Radfahren",
+      "title": "Grundlagenausfahrt",
+      "location": "Hausrunde Richtung Lenzburg",
+      "note": "2h locker, Trittfrequenz 90",
+      "alarm_min": 15
+    },
+    {
+      "date": "2025-10-06",
+      "start_time": "19:00",
+      "duration_min": 45,
+      "sport": "Krafttraining",
+      "title": "Oberkörper",
+      "location": "Fitness Aarau",
+      "note": "Bankdrücken, Klimmzüge, Core",
+      "alarm_min": 20
+    }
+  ]
+}

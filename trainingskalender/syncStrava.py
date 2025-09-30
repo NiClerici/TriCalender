@@ -48,28 +48,28 @@ def _build_summary_line(sport: str, actual: dict) -> str:
     parts: List[str] = []
 
     if distance is not None:
-        parts.append(f"{distance:.1f} km")
+        parts.append(f"Strecke: {distance:.1f} km")
 
     if sport_lower == "run" and pace_run:
-        parts.append(f"{pace_run}/km")
+        parts.append(f"Pace: {pace_run}/km")
     elif sport_lower == "swim" and pace_swim:
-        parts.append(f"{pace_swim} /100m")
+        parts.append(f"Pace: {pace_swim} /100m")
     else:
         if distance is not None and moving_min:
             speed = distance / (moving_min / 60)
-            parts.append(f"{speed:.1f} km/h")
+            parts.append(f"Geschwindigkeit: {speed:.1f} km/h")
 
     duration = moving_min or elapsed_min
     if duration:
-        parts.append(f"{duration:.0f} min")
+        parts.append(f"Dauer: {duration:.0f} min")
 
-    summary = " | ".join(parts) if parts else "keine Daten"
-    return f"✅ {summary}"
+    summary = "\n".join(parts) if parts else "keine Daten"
+    return f"{summary}"
 
 
 def build_strava_block(workout: dict, actual: dict) -> str:
     sport = workout.get("sport", "").lower()
-    lines = ["Strava:"]
+    lines = ["Strava Summary:"]
 
     lines.append(_build_summary_line(sport, actual))
 

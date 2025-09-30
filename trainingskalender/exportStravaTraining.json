@@ -1,0 +1,50 @@
+[
+  {
+    "activity_id": 15950110358,
+    "title": "Post Chrank Run",
+    "sport_type": "Run",
+    "start_time_local": "2025-09-27T10:12:37Z",
+    "elapsed_time_min": 47.083333333333336,
+    "calories": null,
+    "distance_km": 7.5844,
+    "moving_time_min": 45.0,
+    "elevation_gain_m": 28.4,
+    "pace_min_per_km": 5.933309600094932,
+    "pace_min_per_km_str": "5:56",
+    "avg_hr_bpm": 170.4,
+    "max_hr_bpm": 179.0,
+    "avg_cadence_spm": 153.4
+  },
+  {
+    "activity_id": 15976168248,
+    "title": "Pyramid Set with Runna ✅",
+    "sport_type": "Run",
+    "start_time_local": "2025-09-29T14:08:42Z",
+    "elapsed_time_min": 57.666666666666664,
+    "calories": null,
+    "distance_km": 9.149799999999999,
+    "moving_time_min": 53.21666666666667,
+    "elevation_gain_m": 9.5,
+    "pace_min_per_km": 5.815305885089556,
+    "pace_min_per_km_str": "5:49",
+    "avg_hr_bpm": 163.3,
+    "max_hr_bpm": 191.0,
+    "avg_cadence_spm": 140.6
+  },
+  {
+    "activity_id": 15989439628,
+    "title": "Evening Run",
+    "sport_type": "Run",
+    "start_time_local": "2025-09-30T18:34:11Z",
+    "elapsed_time_min": 39.0,
+    "calories": null,
+    "distance_km": 7.0797,
+    "moving_time_min": 38.93333333333333,
+    "elevation_gain_m": 54.4,
+    "pace_min_per_km": 5.498735290883096,
+    "pace_min_per_km_str": "5:30",
+    "avg_hr_bpm": 171.9,
+    "max_hr_bpm": 187.0,
+    "avg_cadence_spm": null
+  }
+]

@@ -5,13 +5,13 @@ TriCalender exports structured training plans from `trainingskalender/trainings.
 ## Requirements
 
 - Python 3.11 or newer (ships with the `zoneinfo` module used for time zones)
-- Python package: `icalendar`
+- Python package: `icalendar` (install via `pip install -r requirements.txt`)
 
 ### Optional: isolate dependencies
 ```bash
 python -m venv venv
 source venv/bin/activate
-pip install icalendar
+pip install -r requirements.txt
 ```
 
 ## Edit the training plan
@@ -70,6 +70,20 @@ Use the helper script to stage, commit with a timestamped message, and push:
 ```
 It skips committing when the working tree is clean.
 
+## Manage secrets
+
+- Copy `.env.example` to `.env` and fill in API tokens or other private values.
+- `.env` is ignored by Git so secrets stay local.
+- Load variables in Python with `os.environ.get("CLIENT_ID")` or add `python-dotenv` if you prefer automatic loading.
+
+## Fetch Strava activities
+
+Download recent Strava activities into `trainingskalender/strava_activities.json`:
+```bash
+python trainingskalender/getStrava.py --per-page 40 --after 2024-01-01
+```
+The script refreshes expired tokens automatically using the values stored in `.env` and writes updated tokens back to that file.
+
 ## Implementation notes
 
 - Event UIDs derive from the date, start time, title, and sport so calendar clients detect updates reliably.
@@ -79,6 +93,6 @@ It skips committing when the working tree is clean.
 
 ## Troubleshooting
 
-- `ModuleNotFoundError: icalendar`: install the dependency (`pip install icalendar`).
+- `ModuleNotFoundError: icalendar`: install dependencies with `pip install -r requirements.txt`.
 - Nothing happens when exporting: double-check the JSON structure and that `trainings` contains a list of sessions.
 - Calendar does not update immediately: some clients (e.g. iOS) cache subscriptions for several minutes; allow time before re-checking or force a manual refresh.

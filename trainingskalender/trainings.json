@@ -6,12 +6,27 @@
       "duration_min": 45,
       "sport": "Run",
       "title": "Easy Run",
-      "note": "Z2 locker. Am Ende 6×20 s Strides mit voller Erholung.",
+      "note": "Z2 locker. Am Ende 6×20 s Strides mit voller Erholung.\n\nStrava:\n✅ 7.1 km | 5:30/km | 39 min\nHF Ø/Max 172/187 bpm\nHöhenmeter 54 m\nStrava Link: https://www.strava.com/activities/15989439628",
       "use_default_alarm": true,
-      "completed": false,
-      "matched_activity_id": null,
-      "match_score": null,
-      "actual": null
+      "completed": true,
+      "matched_activity_id": 15989439628,
+      "match_score": 0.644,
+      "actual": {
+        "activity_id": 15989439628,
+        "title": "Evening Run",
+        "sport_type": "Run",
+        "start_time_local": "2025-09-30T18:34:11Z",
+        "elapsed_time_min": 39.0,
+        "calories": null,
+        "distance_km": 7.0797,
+        "moving_time_min": 38.93333333333333,
+        "elevation_gain_m": 54.4,
+        "pace_min_per_km": 5.498735290883096,
+        "pace_min_per_km_str": "5:30",
+        "avg_hr_bpm": 171.9,
+        "max_hr_bpm": 187.0,
+        "avg_cadence_spm": null
+      }
     },
     {
       "date": "2025-10-13",

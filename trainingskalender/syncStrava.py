@@ -204,9 +204,6 @@ def main() -> None:
         plan_note = workout.get("note", "")
         match = find_best_match(workout, strava_raw, used_ids)
         if not match:
-            print(
-                f"Keine Strava-Aktivität für {workout['date']} {workout.get('sport', '')} – {workout.get('title', '')} gefunden."
-            )
             continue
 
         print(

@@ -20,14 +20,24 @@ pip install -r requirements.txt
 2. **Strava laden** – `python trainingskalender/getStrava.py` holt Aktivitäten der letzten `days_back` Tage und speichert sie als `trainingskalender/exportStravaTraining.json`.
 3. **Plan synchronisieren** – `python trainingskalender/syncStrava.py` matched offene Workouts, markiert Treffer als erledigt und erweitert die Notizen um einen Strava-Block (inkl. Log-Ausgabe, welche Sessions aktualisiert wurden).
 4. **ICS exportieren** – `python trainingskalender/export.py` erstellt/aktualisiert `tritrainings.ics`.
-5. **Veröffentlichen** – Mit Git committen und pushen, damit GitHub Pages den neuen Kalender ausliefert.
+5. **Veröffentlichen** – Mit Git committen und pushen oder das Helferskript nutzen.
 
-Kurzfassung für Schritt 5:
+Kurzfassung ohne Helfer:
 ```bash
 git add trainingskalender/trainings.json tritrainings.ics
 git commit -m "Sync plan with Strava"
 git push
 ```
+
+### Automatisches Commit & Push
+
+```bash
+./auto_commit.sh
+```
+- staged `trainingskalender/trainings.json`, `tritrainings.ics` und alle relevanten Dateien
+- erstellt eine Zeitstempel-Nachricht
+- pusht zum konfigurierten Remote
+- überspringt den Commit, wenn keine Änderungen vorhanden sind
 
 ## Plan editieren
 
@@ -75,9 +85,7 @@ Erstellt `tritrainings.ics` neben dem Skript, setzt pro Event eine stabile UID u
 ## Veröffentlichung / Hosting
 
 1. `tritrainings.ics` kurz prüfen (Kalender öffnen oder Datei ansehen).
-2. Mit Git committen & pushen, damit `https://niclerici.github.io/TriCalender/tritrainings.ics` aktualisiert wird.
-
-Automatisches Commit/Pull kannst du über `./auto_commit.sh` erledigen – der Helfer staged, erstellt eine Zeitstempel-Nachricht und pusht, solange Änderungen vorhanden sind.
+2. Mit Git committen & pushen oder `./auto_commit.sh` nutzen, damit `https://niclerici.github.io/TriCalender/tritrainings.ics` aktualisiert wird.
 
 ## Secrets verwalten
 

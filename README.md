@@ -1,98 +1,99 @@
 # TriCalender
 
-TriCalender exports structured training plans from `trainingskalender/trainings.json` into an iCalendar (`.ics`) file that can be imported or subscribed to from calendar apps.
+TriCalender hält einen schlanken Trainingsplan als JSON vor, synchronisiert absolvierte Einheiten mit Strava und exportiert einen abonnierbaren `.ics` Kalender.
 
 ## Requirements
 
-- Python 3.11 or newer (ships with the `zoneinfo` module used for time zones)
-- Python package: `icalendar` (install via `pip install -r requirements.txt`)
+- Python 3.11 oder neuer (inkl. `zoneinfo`)
+- Abhängigkeiten aus `requirements.txt` (`icalendar`, `python-dotenv`, `requests`)
 
-### Optional: isolate dependencies
+### Optional: virtuelle Umgebung
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Edit the training plan
+## Daily workflow
 
-Update `trainingskalender/trainings.json` with your upcoming sessions. Each entry needs:
-- `date` (`YYYY-MM-DD`)
-- `start_time` (`HH:MM` 24h)
-- `duration_min`
-- `sport`
-- `title`
-- Optional: `location`, `note`, `alarm_min`
+1. **Plan pflegen** – Einträge in `trainingskalender/trainings.json` anpassen.
+2. **Strava laden** – `python trainingskalender/getStrava.py` holt Aktivitäten der letzten `days_back` Tage und speichert sie als `trainingskalender/exportStravaTraining.json`.
+3. **Plan synchronisieren** – `python trainingskalender/syncStrava.py` matched offene Workouts, markiert Treffer als erledigt und erweitert die Notizen um einen Strava-Block (inkl. Log-Ausgabe, welche Sessions aktualisiert wurden).
+4. **ICS exportieren** – `python trainingskalender/export.py` erstellt/aktualisiert `tritrainings.ics`.
+5. **Veröffentlichen** – Mit Git committen und pushen, damit GitHub Pages den neuen Kalender ausliefert.
 
-Example:
-```json
-{
-  "trainings": [
-    {
-      "date": "2025-10-01",
-      "start_time": "18:30",
-      "duration_min": 60,
-      "sport": "Laufen",
-      "title": "GA1 Dauerlauf",
-      "location": "Aarau",
-      "note": "Locker 60 Min, Pulszone 2",
-      "alarm_min": 30
-    }
-  ]
-}
-```
-
-## Export the calendar
-
-Run from the project root:
+Kurzfassung für Schritt 5:
 ```bash
-python trainingskalender/export.py
-```
-The script writes `tritrainings.ics` next to the script and prints the output path. Re-run anytime you change the JSON.
-
-## Publish updates
-
-1. Confirm `tritrainings.ics` contains the expected sessions (open in a calendar app or look at the raw file).
-2. Commit and push to GitHub so the hosted calendar at `https://niclerici.github.io/TriCalender/tritrainings.ics` refreshes.
-
-Short version:
-```bash
-git add tritrainings.ics
-git commit -m "Trainingsplan Update"
+git add trainingskalender/trainings.json tritrainings.ics
+git commit -m "Sync plan with Strava"
 git push
 ```
 
-### Automate commit + push
+## Plan editieren
 
-Use the helper script to stage, commit with a timestamped message, and push:
+Jede Einheit in `trainings.json` benötigt mindestens
+- `date` (`YYYY-MM-DD`)
+- `start_time` (`HH:MM`, 24h)
+- `duration_min`
+- `sport`
+- `title`
+
+Optional kannst du `note`, `use_default_alarm`, `location` u.Ä. ergänzen. Der Strava-Sync hängt seinen Block automatisch an `note` an bzw. ersetzt ihn beim nächsten Lauf.
+
+## Strava Aktivitäten abrufen
+
 ```bash
-./auto_commit.sh
+python trainingskalender/getStrava.py
 ```
-It skips committing when the working tree is clean.
+- liest `CLIENT_ID`, `CLIENT_SECRET`, `REFRESH_TOKEN` aus `.env`
+- erneuert bei Bedarf den Access Token (per Refresh Flow)
+- lädt alle Aktivitäten der letzten `days_back` Tage (Default: 10) und speichert die verdichteten Daten in `exportStravaTraining.json`
 
-## Manage secrets
+Passe `days_back` im Skript an, falls du ein größeres Zeitfenster brauchst.
 
-- Copy `.env.example` to `.env` and fill in API tokens or other private values.
-- `.env` is ignored by Git so secrets stay local.
-- Load variables in Python with `os.environ.get("CLIENT_ID")` or add `python-dotenv` if you prefer automatic loading.
+## Plan mit Strava mergen
 
-## Fetch Strava activities
-
-Download recent Strava activities into `trainingskalender/strava_activities.json`:
 ```bash
-python trainingskalender/getStrava.py --per-page 40 --after 2024-01-01
+python trainingskalender/syncStrava.py
 ```
-The script refreshes expired tokens automatically using the values stored in `.env` and writes updated tokens back to that file.
+- lädt Plan + Strava-Export
+- mappt Sportarten über `SPORT_MAP`
+- akzeptiert Datum ±1 Tag und Dauerabweichungen ≤40 % oder ≤10 Minuten
+- wählt bei mehreren Kandidaten den besten Score (Datum, Startzeit, Dauer)
+- setzt `completed`, `matched_activity_id`, `match_score`, `actual` und ersetzt den Strava-Block in `note`
+- loggt im Terminal, ob eine Einheit gematcht wurde oder offen bleibt
+
+Bereits abgeschlossene Workouts werden übersprungen. Wenn du eine Einheit neu zuordnen willst, lösche `completed`/`matched_activity_id` im JSON.
+
+## Kalender exportieren
+
+```bash
+python trainingskalender/export.py
+```
+Erstellt `tritrainings.ics` neben dem Skript, setzt pro Event eine stabile UID und aktualisiert `DTSTAMP`, damit abonnierte Kalender die Änderungen erkennen.
+
+## Veröffentlichung / Hosting
+
+1. `tritrainings.ics` kurz prüfen (Kalender öffnen oder Datei ansehen).
+2. Mit Git committen & pushen, damit `https://niclerici.github.io/TriCalender/tritrainings.ics` aktualisiert wird.
+
+Automatisches Commit/Pull kannst du über `./auto_commit.sh` erledigen – der Helfer staged, erstellt eine Zeitstempel-Nachricht und pusht, solange Änderungen vorhanden sind.
+
+## Secrets verwalten
+
+- `.env.example` → `.env` kopieren und Strava-Credentials eintragen.
+- `.env` ist gitignored und bleibt lokal.
+- `getStrava.py` lädt die Werte via `python-dotenv`; andere Skripte lesen nur aus den JSON-Dateien.
 
 ## Implementation notes
 
-- Event UIDs derive from the date, start time, title, and sport so calendar clients detect updates reliably.
-- `DTSTAMP` is refreshed on every export which prompts connected clients to sync new changes.
-- The exporter aborts early if `trainingskalender/trainings.json` is missing to prevent publishing an empty calendar.
-- All times use the `Europe/Berlin` time zone via Python's `zoneinfo` module.
+- Matching-Toleranzen lassen sich in `syncStrava.py` über `DURATION_TOLERANCE_*` und `DATE_TOLERANCE_DAYS` justieren.
+- Der Strava-Block im `note` wird beim Sync immer komplett ersetzt, sodass du keinen manuellen Abgleich brauchst.
+- Die ICS-UIDs basieren auf Datum, Startzeit, Titel und Sport, damit Kalenderclients Updates erkennen.
+- `export.py` verwendet `Europe/Berlin` (Zoneinfo) – passe den Code an, falls du eine andere Zeitzone bevorzugst.
 
 ## Troubleshooting
 
-- `ModuleNotFoundError: icalendar`: install dependencies with `pip install -r requirements.txt`.
-- Nothing happens when exporting: double-check the JSON structure and that `trainings` contains a list of sessions.
-- Calendar does not update immediately: some clients (e.g. iOS) cache subscriptions for several minutes; allow time before re-checking or force a manual refresh.
+- `ModuleNotFoundError`: `pip install -r requirements.txt`
+- Keine Strava-Übereinstimmung: Datum/Dauer/Sport prüfen oder Toleranzen anpassen, ggf. `days_back` erhöhen.
+- Kalender aktualisiert sich nicht sofort: Viele Clients (v.a. iOS) cachen für einige Minuten – kurz warten oder manuell neu laden.

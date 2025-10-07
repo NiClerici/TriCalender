@@ -16,46 +16,46 @@ function renderTrainings(data) {
     return;
   }
 
-  container.classList.add("training-grid");
-
-  data.trainings.forEach((t) => {
-    const card = document.createElement("article");
-    card.className = "training-card";
-
-    const header = document.createElement("div");
-    header.className = "training-header";
-    header.append(
-      createSpan("training-date", t.date),
-      createSpan("training-time", t.start_time)
-    );
-    card.appendChild(header);
-
-    const title = document.createElement("h2");
-    title.className = "training-title";
-    title.textContent = t.title;
-    card.appendChild(title);
-
-    const sport = document.createElement("p");
-    sport.className = "training-sport";
-    sport.textContent = t.sport;
-    card.appendChild(sport);
-
-    
-
-    if (t.actual) {
-      card.appendChild(createActualBlock(t.actual));
-      
-        const stravaLink = document.createElement("a");
-        stravaLink.className = "training-notes";
-        stravaLink.href = `https://www.strava.com/activities/${t.actual.activity_id}`;
-        stravaLink.textContent = "Strava Link";
-        stravaLink.target = '_blank';
-        stravaLink.rel = 'noopener noreferrer';
-        card.appendChild(stravaLink);
+  const trainings = Array.isArray(data?.trainings) ? data.trainings.slice() : [];
+  // Gruppiert alle Trainings nach ISO-Kalenderwochen und sortiert chronologisch.
+  const weeks = Object.values(groupByWeek(trainings)).sort((a, b) => {
+    if (a.year === b.year) {
+      return a.week - b.week;
     }
-
-    container.appendChild(card);
+    return a.year - b.year;
   });
+
+  container.innerHTML = "";
+  container.classList.remove("training-grid");
+  container.classList.add("training-weeks");
+
+  const fragment = document.createDocumentFragment();
+
+  // Rendert für jede Woche einen Abschnitt mit den zugehörigen Karten.
+  weeks.forEach((weekGroup) => {
+    const weekSection = document.createElement("section");
+    weekSection.className = "week-group";
+
+    const header = document.createElement("h3");
+    header.className = "week-header";
+    header.textContent = formatWeekHeader(weekGroup);
+    weekSection.appendChild(header);
+
+    const trainingsWrapper = document.createElement("div");
+    trainingsWrapper.className = "week-trainings";
+
+    weekGroup.trainings
+      .slice()
+      .sort(compareTrainings)
+      .forEach((training) => {
+        trainingsWrapper.appendChild(createTrainingCard(training));
+      });
+
+    weekSection.appendChild(trainingsWrapper);
+    fragment.appendChild(weekSection);
+  });
+
+  container.appendChild(fragment);
 }
 
 // Hilfsfunktion für Spans mit Klasse und Textinhalt.
@@ -84,9 +84,46 @@ function createActualBlock(actual) {
     const roundedDuration = Math.round(actual.elapsed_time_min);
     details.textContent = `${roundedDuration} min ${paceInfo}`;
     block.append(label, title, details);
-    return block;
+  return block;
 }
 
+// Baut eine Trainingskarte inklusive optionaler Strava-Verlinkung.
+function createTrainingCard(training) {
+  const card = document.createElement("article");
+  card.className = "training-card";
+
+  const header = document.createElement("div");
+  header.className = "training-header";
+  header.append(
+    createSpan("training-date", training.date),
+    createSpan("training-time", training.start_time)
+  );
+  card.appendChild(header);
+
+  const title = document.createElement("h2");
+  title.className = "training-title";
+  title.textContent = training.title;
+  card.appendChild(title);
+
+  const sport = document.createElement("p");
+  sport.className = "training-sport";
+  sport.textContent = training.sport;
+  card.appendChild(sport);
+
+  if (training.actual) {
+    card.appendChild(createActualBlock(training.actual));
+
+    const stravaLink = document.createElement("a");
+    stravaLink.className = "training-notes";
+    stravaLink.href = `https://www.strava.com/activities/${training.actual.activity_id}`;
+    stravaLink.textContent = "Strava Link";
+    stravaLink.target = "_blank";
+    stravaLink.rel = "noopener noreferrer";
+    card.appendChild(stravaLink);
+  }
+
+  return card;
+}
 
 function getISOWeek(date){
     const tempDate = new Date(date.getTime());
@@ -115,3 +152,42 @@ function groupByWeek(trainings) {
   }, {});
 }
 
+// Sortiert Trainings innerhalb einer Woche nach Datum und Startzeit.
+function compareTrainings(a, b) {
+  const dateA = new Date(`${a.date}T${a.start_time ?? "00:00"}`);
+  const dateB = new Date(`${b.date}T${b.start_time ?? "00:00"}`);
+  return dateA.getTime() - dateB.getTime();
+}
+
+// Erstellt den Wochenkopf (KW + Datumsrange) für den jeweiligen Abschnitt.
+function formatWeekHeader({ year, week, trainings }) {
+  if (!trainings.length) {
+    return `KW ${week} ${year}`;
+  }
+
+  const dates = trainings
+    .map((training) => new Date(training.date))
+    .sort((a, b) => a.getTime() - b.getTime());
+
+  const start = dates[0];
+  const end = dates[dates.length - 1];
+
+  const formatDayMonth = (date) => {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    return `${day}.${month}`;
+  };
+
+  const startLabel = formatDayMonth(start);
+  const endLabel = formatDayMonth(end);
+
+  const sameYear = start.getFullYear() === end.getFullYear();
+  const yearLabel = sameYear
+    ? start.getFullYear()
+    : `${start.getFullYear()} / ${end.getFullYear()}`;
+
+  const rangeLabel =
+    startLabel === endLabel ? startLabel : `${startLabel} – ${endLabel}`;
+
+  return `KW ${week} · ${rangeLabel} ${yearLabel}`;
+}

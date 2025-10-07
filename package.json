@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@fullcalendar/icalendar": "^6.1.19",
+    "fullcalendar": "^6.1.19",
+    "ical.js": "^1.5.0"
+  }
+}

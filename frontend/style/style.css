@@ -1,0 +1,182 @@
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.page-title {
+  margin: 2.5rem auto 2rem;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  max-width: min(70ch, 100% - 4rem);
+  margin-inline: auto;
+}
+
+#calendar {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding-inline: 1rem;
+}
+
+#trainings {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding-inline: 1rem;
+}
+
+.training-weeks {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.week-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.week-header {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.week-trainings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.training-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+
+.training-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.training-title {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.training-sport ,
+.training-notes {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.training-link {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.training-link:hover,
+.training-link:focus {
+  text-decoration: underline;
+}
+
+.training-actual {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.training-actual-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.training-actual-title {
+  font-size: 0.95rem;
+}
+
+.training-actual-details {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+@media (max-width: 600px) {
+  .week-trainings {
+    gap: 1rem;
+  }
+
+  .training-card {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .training-card {
+    background-color: rgba(30, 41, 59, 0.9);
+    box-shadow: none;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+  }
+
+  .training-sport,
+  .training-actual,
+  .training-actual-details {
+    color: inherit;
+  }
+
+  .training-header,
+  .training-actual-label {
+    color: rgba(148, 163, 184, 0.8);
+  }
+
+  .week-header {
+    color: rgba(148, 163, 184, 0.9);
+  }
+
+  .training-link {
+    color: #38bdf8;
+  }
+
+  .page-title {
+    color: #e2e8f0;
+  }
+}

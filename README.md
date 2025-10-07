@@ -87,6 +87,17 @@ Erstellt `tritrainings.ics` neben dem Skript, setzt pro Event eine stabile UID u
 1. `tritrainings.ics` kurz prüfen (Kalender öffnen oder Datei ansehen).
 2. Mit Git committen & pushen oder `./auto_commit.sh` nutzen, damit `https://niclerici.github.io/TriCalender/tritrainings.ics` aktualisiert wird.
 
+## Frontend-Ansicht
+
+- `frontend/index.html` rendert den Plan als responsive Kartenansicht direkt aus `trainingskalender/trainings.json`.
+- Karten zeigen Datum, Startzeit, Sportart, Titel sowie – falls vorhanden – den `actual`-Block inklusive Strava-Link.
+- Teste lokal über einen simplen Static-Server, z.B.:
+  ```bash
+  python -m http.server 8000 --directory frontend
+  ```
+  Danach im Browser `http://localhost:8000/index.html` öffnen (direktes Öffnen per `file://` scheitert am Fetch).
+- Styles & Verhalten liegen in `frontend/style/style.css` und `frontend/script/main.js`; Anpassungen lassen sich ohne Build-Setup vornehmen.
+
 ## Secrets verwalten
 
 - `.env.example` → `.env` kopieren und Strava-Credentials eintragen.

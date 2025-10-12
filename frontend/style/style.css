@@ -6,6 +6,8 @@ body {
   font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 .page-title {
@@ -15,6 +17,38 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #0f172a;
+}
+
+.filters {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #0f172a;
+}
+
+.filter-label {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.filter-select {
+  min-width: 8rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  border-radius: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.filter-select:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
 }
 
 img,
@@ -76,8 +110,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  flex: 1 1 240px;
-  min-width: 240px;
+  flex: 0 0 260px;
+  width: 260px;
+  max-width: 260px;
 }
 
 .training-header {
@@ -146,11 +181,29 @@ main {
   }
 
   .training-card {
-    flex-basis: 100%;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
   }
 }
 
 @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+
+  .filters {
+    color: #e2e8f0;
+  }
+
+  .filter-select {
+    background-color: rgba(30, 41, 59, 0.9);
+    border-color: rgba(148, 163, 184, 0.4);
+    color: #e2e8f0;
+    box-shadow: none;
+  }
+
   .training-card {
     background-color: rgba(30, 41, 59, 0.9);
     box-shadow: none;

@@ -1,8 +1,14 @@
+let allTrainings = [];
+
 // Startet erst, wenn das DOM aufgebaut wurde, damit der Trainings-Container vorhanden ist.
 document.addEventListener("DOMContentLoaded", () => {
   fetch("../trainingskalender/trainings.json")
     .then((response) => response.json())
-    .then((data) => renderTrainings(data))
+    .then((data) => {
+      allTrainings = Array.isArray(data?.trainings) ? data.trainings : [];
+      renderTrainings(allTrainings);
+      wireSportFilter();
+    })
     .catch((error) => {
       console.error("Fehler beim Laden der Trainingsdaten:", error);
     });
@@ -16,7 +22,11 @@ function renderTrainings(data) {
     return;
   }
 
-  const trainings = Array.isArray(data?.trainings) ? data.trainings.slice() : [];
+  const trainings = Array.isArray(data)
+    ? data.slice()
+    : Array.isArray(data?.trainings)
+    ? data.trainings.slice()
+    : [];
   // Gruppiert alle Trainings nach ISO-Kalenderwochen und sortiert chronologisch.
   const weeks = Object.values(groupByWeek(trainings)).sort((a, b) => {
     if (a.year === b.year) {
@@ -56,6 +66,19 @@ function renderTrainings(data) {
   });
 
   container.appendChild(fragment);
+}
+
+function wireSportFilter() {
+  const select = document.getElementById("sport-filter");
+  if (!select) {
+    return;
+  }
+
+  select.addEventListener("change", () => {
+    const value = select.value;
+    const filtered = filterBySport(allTrainings, value);
+    renderTrainings(filtered);
+  });
 }
 
 // Hilfsfunktion für Spans mit Klasse und Textinhalt.
@@ -190,4 +213,13 @@ function formatWeekHeader({ year, week, trainings }) {
     startLabel === endLabel ? startLabel : `${startLabel} – ${endLabel}`;
 
   return `KW ${week} · ${rangeLabel} ${yearLabel}`;
+}
+
+function filterBySport(trainings, sport) {
+  if (!sport) return trainings;
+  const sports = Array.isArray(sport) ? sport.map(s => s.toLowerCase().trim()) : [sport.toLowerCase().trim()];
+  return trainings.filter(training => {
+    const entrySport = training?.sport?.toLowerCase().trim();
+    return entrySport && sports.includes(entrySport);
+  });
 }

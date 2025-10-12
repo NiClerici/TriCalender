@@ -90,12 +90,27 @@
       "duration_min": 55,
       "sport": "Bike",
       "title": "Bike Z2 – Technik & Trittfrequenz",
-      "note": "Z2 locker. 5×1′ hohe Kadenz (100–110) mit 2′ Z2. Fokus: runder Tritt, entspannte Schultern.",
+      "note": "Z2 locker. 5×1′ hohe Kadenz (100–110) mit 2′ Z2. Fokus: runder Tritt, entspannte Schultern.\n\nStrava Summary:\nStrecke: 20.1 km\nGeschwindigkeit: 19.4 km/h\nDauer: 62 min\nHF Ø/Max 131/155 bpm\nLeistung Ø/Max 113/348 W\nKadenz 60 rpm\nStrava Link: https://www.strava.com/activities/16117171899",
       "use_default_alarm": true,
-      "completed": false,
-      "matched_activity_id": null,
-      "match_score": null,
-      "actual": null
+      "completed": true,
+      "matched_activity_id": 16117171899,
+      "match_score": 45.322,
+      "actual": {
+        "activity_id": 16117171899,
+        "title": "Afternoon Ride",
+        "sport_type": "Ride",
+        "start_time_local": "2025-10-12T14:07:55Z",
+        "elapsed_time_min": 62.15,
+        "calories": null,
+        "distance_km": 20.087,
+        "moving_time_min": 62.15,
+        "elevation_gain_m": 0,
+        "avg_watts": 113.4,
+        "max_watts": 348,
+        "avg_hr_bpm": 130.9,
+        "max_hr_bpm": 155.0,
+        "avg_cadence_rpm": 59.6
+      }
     },
     {
       "date": "2025-10-15",

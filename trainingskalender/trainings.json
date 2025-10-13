@@ -16,7 +16,7 @@
         "title": "Evening Run",
         "sport_type": "Run",
         "start_time_local": "2025-09-30T18:34:11Z",
-        "elapsed_time_min": 39.0,
+        "elapsed_time_min": 39,
         "calories": null,
         "distance_km": 7.0797,
         "moving_time_min": 38.93333333333333,
@@ -24,7 +24,7 @@
         "pace_min_per_km": 5.498735290883096,
         "pace_min_per_km_str": "5:30",
         "avg_hr_bpm": 171.9,
-        "max_hr_bpm": 187.0,
+        "max_hr_bpm": 187,
         "avg_cadence_spm": null
       }
     },
@@ -48,12 +48,12 @@
         "calories": null,
         "distance_km": 21.1117,
         "moving_time_min": 116.86666666666666,
-        "elevation_gain_m": 112.0,
+        "elevation_gain_m": 112,
         "pace_min_per_km": 5.535259603675412,
         "pace_min_per_km_str": "5:32",
         "avg_hr_bpm": 174.9,
-        "max_hr_bpm": 193.0,
-        "avg_cadence_spm": 158.0
+        "max_hr_bpm": 193,
+        "avg_cadence_spm": 158
       }
     },
     {
@@ -76,11 +76,11 @@
         "calories": null,
         "distance_km": 21.2742,
         "moving_time_min": 113.03333333333333,
-        "elevation_gain_m": 114.0,
+        "elevation_gain_m": 114,
         "pace_min_per_km": 5.312931675698651,
         "pace_min_per_km_str": "5:19",
         "avg_hr_bpm": 179.2,
-        "max_hr_bpm": 193.0,
+        "max_hr_bpm": 193,
         "avg_cadence_spm": 159.8
       }
     },
@@ -108,12 +108,12 @@
         "avg_watts": 113.4,
         "max_watts": 348,
         "avg_hr_bpm": 130.9,
-        "max_hr_bpm": 155.0,
+        "max_hr_bpm": 155,
         "avg_cadence_rpm": 59.6
       }
     },
     {
-      "date": "2025-10-15",
+      "date": "2025-10-14",
       "start_time": "18:00",
       "duration_min": 60,
       "sport": "Bike",
@@ -123,11 +123,12 @@
       "completed": false,
       "matched_activity_id": null,
       "match_score": null,
-      "actual": null
+      "actual": null,
+      "location": null
     },
     {
-      "date": "2025-10-16",
-      "start_time": "18:00",
+      "date": "2025-10-15",
+      "start_time": "16:00",
       "duration_min": 60,
       "sport": "Run",
       "title": "Easy Run + Strides",
@@ -136,7 +137,8 @@
       "completed": false,
       "matched_activity_id": null,
       "match_score": null,
-      "actual": null
+      "actual": null,
+      "location": null
     },
     {
       "date": "2025-10-18",

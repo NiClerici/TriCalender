@@ -1,21 +1,5 @@
 [
   {
-    "activity_id": 16010597151,
-    "title": "Afternoon Run",
-    "sport_type": "Run",
-    "start_time_local": "2025-10-02T16:31:46Z",
-    "elapsed_time_min": 50.63333333333333,
-    "calories": null,
-    "distance_km": 8.8057,
-    "moving_time_min": 49.06666666666667,
-    "elevation_gain_m": 21.0,
-    "pace_min_per_km": 5.572272372673576,
-    "pace_min_per_km_str": "5:34",
-    "avg_hr_bpm": 161.3,
-    "max_hr_bpm": 184.0,
-    "avg_cadence_spm": 153.8
-  },
-  {
     "activity_id": 16028311825,
     "title": "eh halbe",
     "sport_type": "Run",

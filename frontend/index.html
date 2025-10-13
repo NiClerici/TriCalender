@@ -1,23 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRICALENDER</title>
-    <link rel="stylesheet" href="style/style.css">
-    <script defer src="script/main.js"></script>
-</head>
-<body>
-    <h1 class="page-title">COACH TRICALENDER</h1>
-    <section class="filters">
-        <label for="sport-filter" class="filter-label">Sport filtern:</label>
-        <select id="sport-filter" class="filter-select">
-            <option value="">Alle</option>
-            <option value="Swim">Swim</option>
-            <option value="Bike">Bike</option>
-            <option value="Run">Run</option>
-        </select>
-    </section>
-    <div id="trainings"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training Calendar - Plan & Track Your Workouts</title>
+    <meta name="description" content="Professional training calendar with Strava integration. Plan workouts, track performance, and analyze your training progress across running, cycling, swimming, and strength training." />
+    <meta name="author" content="Training Calendar" />
+
+    <meta property="og:title" content="Training Calendar - Plan & Track Your Workouts" />
+    <meta property="og:description" content="Professional training calendar with Strava integration. Plan workouts, track performance, and analyze your training progress." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

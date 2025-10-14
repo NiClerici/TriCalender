@@ -1,21 +1,5 @@
 [
   {
-    "activity_id": 16028311825,
-    "title": "eh halbe",
-    "sport_type": "Run",
-    "start_time_local": "2025-10-04T10:06:02Z",
-    "elapsed_time_min": 117.63333333333334,
-    "calories": null,
-    "distance_km": 21.1117,
-    "moving_time_min": 116.86666666666666,
-    "elevation_gain_m": 112.0,
-    "pace_min_per_km": 5.535259603675412,
-    "pace_min_per_km_str": "5:32",
-    "avg_hr_bpm": 174.9,
-    "max_hr_bpm": 193.0,
-    "avg_cadence_spm": 158.0
-  },
-  {
     "activity_id": 16052905128,
     "title": "Afternoon Weight Training",
     "sport_type": "WeightTraining",
@@ -106,5 +90,21 @@
     "avg_hr_bpm": 130.9,
     "max_hr_bpm": 155.0,
     "avg_cadence_rpm": 59.6
+  },
+  {
+    "activity_id": 16138900100,
+    "title": "Afternoon Ride",
+    "sport_type": "Ride",
+    "start_time_local": "2025-10-14T16:34:30Z",
+    "elapsed_time_min": 66.16666666666667,
+    "calories": null,
+    "distance_km": 23.5892,
+    "moving_time_min": 66.16666666666667,
+    "elevation_gain_m": 0,
+    "avg_watts": 115.5,
+    "max_watts": 290,
+    "avg_hr_bpm": 126.4,
+    "max_hr_bpm": 148.0,
+    "avg_cadence_rpm": 65.6
   }
 ]

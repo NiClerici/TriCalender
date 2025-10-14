@@ -155,6 +155,20 @@
       "location": null
     },
     {
+      "date": "2025-10-18",
+      "start_time": "10:30",
+      "duration_min": 90,
+      "sport": "Swim",
+      "title": "Swim - Technik & Grundlagen - Gabriele",
+      "note": "Kraulen, Technikübungen, Grundlagen. 60–80 min. Mit Gabriele im Hallenbad Aarau.\n\nAdresse: Hallenbad Aarau, Baselstrasse 2, 5000 Aarau\n\nWichtig: Badekappe und Schwimmbrille mitbringen!",
+      "use_default_alarm": true,
+      "completed": false,
+      "matched_activity_id": null,
+      "match_score": null,
+      "actual": null,
+      "location": "Telli Hallenbad, Aarau,Aargau"
+    },
+    {
       "date": "2025-10-19",
       "start_time": "10:30",
       "duration_min": 80,

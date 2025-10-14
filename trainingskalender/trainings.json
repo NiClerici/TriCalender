@@ -142,8 +142,8 @@
     },
     {
       "date": "2025-10-18",
-      "start_time": "09:00",
-      "duration_min": 35,
+      "start_time": "10:00",
+      "duration_min": 60,
       "sport": "Workout",
       "title": "Strength – Core/Hüfte/Glutes",
       "note": "Einbeinige Muster (Split Squats/Step-ups), Core Antirotation (Pallof), Hüftstrecker, Waden exzentrisch. 30–40 min.",
@@ -151,11 +151,12 @@
       "completed": false,
       "matched_activity_id": null,
       "match_score": null,
-      "actual": null
+      "actual": null,
+      "location": null
     },
     {
       "date": "2025-10-19",
-      "start_time": "09:30",
+      "start_time": "10:30",
       "duration_min": 80,
       "sport": "Run",
       "title": "Long Run Z2",
@@ -164,7 +165,8 @@
       "completed": false,
       "matched_activity_id": null,
       "match_score": null,
-      "actual": null
+      "actual": null,
+      "location": "Aarau,Aargau"
     },
     {
       "date": "2025-10-20",

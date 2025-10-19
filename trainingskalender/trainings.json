@@ -172,20 +172,6 @@
     },
     {
       "date": "2025-10-18",
-      "start_time": "10:00",
-      "duration_min": 60,
-      "sport": "Workout",
-      "title": "Strength – Core/Hüfte/Glutes",
-      "note": "Einbeinige Muster (Split Squats/Step-ups), Core Antirotation (Pallof), Hüftstrecker, Waden exzentrisch. 30–40 min.",
-      "use_default_alarm": true,
-      "completed": false,
-      "matched_activity_id": null,
-      "match_score": null,
-      "actual": null,
-      "location": null
-    },
-    {
-      "date": "2025-10-18",
       "start_time": "12:00",
       "duration_min": 90,
       "sport": "Swim",

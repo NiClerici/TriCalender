@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Training, SportType } from "@/types/training";
 import { ControlBar } from "@/components/training/ControlBar";
 import { SportFilter } from "@/components/training/SportFilter";
@@ -85,6 +85,25 @@ const mapTraining = (raw: RawTraining, index: number): Training => {
   };
 };
 
+const createEmptyTraining = (): Training => {
+  const today = format(new Date(), "yyyy-MM-dd");
+  return {
+    id: `new-${Date.now()}`,
+    date: today,
+    start_time: "00:00",
+    duration_min: null,
+    sport: "Other",
+    title: "Neues Training",
+    note: "",
+    location: "",
+    use_default_alarm: false,
+    completed: false,
+    matched_activity_id: null,
+    match_score: null,
+    actual: null,
+  };
+};
+
 const Index = () => {
   const [trainings, setTrainings] = useState<Training[]>([]);
   const [selectedSport, setSelectedSport] = useState<SportType>("All");
@@ -93,25 +112,20 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const controller = new AbortController();
-
-    const loadTrainings = async () => {
+  const loadTrainings = useCallback(
+    async ({ signal }: { signal?: AbortSignal } = {}) => {
       setIsLoading(true);
       try {
-        const response = await fetch(
-          buildEndpoint("trainingskalender/trainings.json"),
-          { signal: controller.signal }
-        );
+        const response = await fetch(buildEndpoint("trainingskalender/trainings.json"), {
+          signal,
+        });
 
         if (!response.ok) {
           throw new Error(`Failed with status ${response.status}`);
         }
 
         const payload: TrainingsResponse = await response.json();
-        const items = Array.isArray(payload?.trainings)
-          ? payload.trainings
-          : [];
+        const items = Array.isArray(payload?.trainings) ? payload.trainings : [];
         const mapped = items
           .filter((raw): raw is RawTraining => Boolean(raw?.date && raw?.title))
           .map((raw, index) => mapTraining(raw, index));
@@ -125,14 +139,20 @@ const Index = () => {
         console.error("Failed to load trainings.json", error);
         setLoadError("Konnte Trainingsdaten nicht laden");
       } finally {
-        setIsLoading(false);
+        if (!signal || !signal.aborted) {
+          setIsLoading(false);
+        }
       }
-    };
+    },
+    []
+  );
 
-    void loadTrainings();
+  useEffect(() => {
+    const controller = new AbortController();
+    void loadTrainings({ signal: controller.signal });
 
     return () => controller.abort();
-  }, []);
+  }, [loadTrainings]);
 
   const availableSports = useMemo<SportType[]>(() => {
     const sports = new Set<string>();
@@ -181,18 +201,28 @@ const Index = () => {
     setDialogOpen(true);
   };
 
+  const handleCreate = () => {
+    const fresh = createEmptyTraining();
+    setEditingTraining(fresh);
+    setDialogOpen(true);
+  };
+
   const handleSave = async (updatedTraining: Training) => {
     const sourceIndex = updatedTraining.sourceIndex;
-    if (typeof sourceIndex !== "number" || Number.isNaN(sourceIndex)) {
-      throw new Error("Training source index is missing.");
-    }
+    const isExisting =
+      typeof sourceIndex === "number" && Number.isInteger(sourceIndex) && sourceIndex >= 0;
 
     const response = await fetch(buildEndpoint("api/trainings"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ training: updatedTraining }),
+      body: JSON.stringify({
+        training: {
+          ...updatedTraining,
+          sourceIndex: isExisting ? sourceIndex : null,
+        },
+      }),
     });
 
     if (!response.ok) {
@@ -213,17 +243,56 @@ const Index = () => {
 
     const mapped = mapTraining(result.training, result.index);
 
-    setTrainings((prev) =>
-      prev.map((training) =>
-        training.sourceIndex === mapped.sourceIndex ? mapped : training
-      )
-    );
+    setTrainings((prev) => {
+      if (isExisting) {
+        return prev.map((training) =>
+          training.sourceIndex === mapped.sourceIndex ? mapped : training
+        );
+      }
+      return [...prev, mapped];
+    });
+    setEditingTraining(mapped);
     setLoadError(null);
+  };
+
+  const handleDelete = async (training: Training) => {
+    if (typeof training.sourceIndex !== "number" || training.sourceIndex < 0) {
+      return;
+    }
+
+    const confirmed = window.confirm("Möchtest du dieses Training wirklich löschen?");
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      const response = await fetch(buildEndpoint(`api/trainings/${training.sourceIndex}`), {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        const detail = await response.text();
+        throw new Error(detail || "Failed to delete training.");
+      }
+
+      setTrainings((prev) => {
+        const filtered = prev.filter((item) => item.sourceIndex !== training.sourceIndex);
+        return filtered.map((item, index) => ({
+          ...item,
+          sourceIndex: index,
+        }));
+      });
+      setEditingTraining(null);
+      setLoadError(null);
+    } catch (error) {
+      console.error("Failed to delete training", error);
+      throw error instanceof Error ? error : new Error("Failed to delete training.");
+    }
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <ControlBar />
+      <ControlBar onCreate={handleCreate} disableCreate={isLoading || dialogOpen} />
       
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
@@ -270,6 +339,7 @@ const Index = () => {
                         key={training.id}
                         training={training}
                         onEdit={handleEdit}
+                        onDelete={handleDelete}
                       />
                     ))}
                 </div>
@@ -284,6 +354,7 @@ const Index = () => {
         open={dialogOpen}
         onOpenChange={setDialogOpen}
         onSave={handleSave}
+        onDelete={handleDelete}
       />
       {loadError && (
         <div className="fixed bottom-4 right-4 text-sm text-muted-foreground bg-background/90 border border-border px-4 py-2 rounded-md shadow-sm">

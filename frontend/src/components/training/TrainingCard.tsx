@@ -3,12 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Training } from "@/types/training";
-import { Clock, MapPin, Edit2, CheckCircle2, ExternalLink } from "lucide-react";
+import { Clock, MapPin, Edit2, CheckCircle2, ExternalLink, Trash2 } from "lucide-react";
 import { format } from "date-fns";
 
 interface TrainingCardProps {
   training: Training;
   onEdit: (training: Training) => void;
+  onDelete?: (training: Training) => void | Promise<void>;
 }
 
 const sportColors: Record<string, string> = {
@@ -19,7 +20,7 @@ const sportColors: Record<string, string> = {
   Other: "bg-muted text-muted-foreground",
 };
 
-export function TrainingCard({ training, onEdit }: TrainingCardProps) {
+export function TrainingCard({ training, onEdit, onDelete }: TrainingCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const startTime = training.start_time ?? "00:00";
@@ -85,14 +86,31 @@ export function TrainingCard({ training, onEdit }: TrainingCardProps) {
             </div>
             <CardTitle className="text-lg">{training.title}</CardTitle>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => onEdit(training)}
-            className={`transition-opacity ${isHovered ? "opacity-100" : "opacity-0"}`}
-          >
-            <Edit2 className="h-4 w-4" />
-          </Button>
+          <div className={`flex items-center gap-1 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"}`}>
+            {onDelete && typeof training.sourceIndex === "number" && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => {
+                  void Promise.resolve(onDelete(training)).catch((error) => {
+                    console.error("Failed to delete training", error);
+                  });
+                }}
+                className="text-destructive hover:text-destructive"
+                aria-label="Training löschen"
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => onEdit(training)}
+              aria-label="Training bearbeiten"
+            >
+              <Edit2 className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </CardHeader>
       

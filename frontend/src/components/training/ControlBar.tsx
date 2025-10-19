@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { PlayCircle, RefreshCw, Upload, GitCommit, LucideIcon } from "lucide-react";
+import { PlayCircle, RefreshCw, Upload, GitCommit, LucideIcon, Plus } from "lucide-react";
 
 type ActionKey = "get-strava" | "sync-strava" | "export" | "commit";
 
@@ -11,6 +11,11 @@ interface ActionConfig {
   icon: LucideIcon;
   successTitle: string;
   successDescription?: string;
+}
+
+interface ControlBarProps {
+  onCreate?: () => void;
+  disableCreate?: boolean;
 }
 
 const ACTIONS: ActionConfig[] = [
@@ -58,7 +63,7 @@ const extractPreviewLine = (text: string | undefined) => {
   return line;
 };
 
-export function ControlBar() {
+export function ControlBar({ onCreate, disableCreate }: ControlBarProps) {
   const { toast } = useToast();
   const [runningAction, setRunningAction] = useState<ActionKey | null>(null);
 
@@ -107,6 +112,19 @@ export function ControlBar() {
           <h1 className="text-xl font-bold text-white">Training Calendar</h1>
 
           <div className="flex items-center gap-2 flex-wrap">
+            {onCreate && (
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                onClick={onCreate}
+                disabled={Boolean(disableCreate)}
+              >
+                <Plus className="h-4 w-4" />
+                Neues Training
+              </Button>
+            )}
+
             {ACTIONS.map((action) => {
               const Icon = action.icon;
               const isRunning = runningAction === action.key;

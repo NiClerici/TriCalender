@@ -33,6 +33,99 @@ const actionCommands: Record<
   },
 };
 
+type TrainingRecord = Record<string, any>;
+
+const defaultTrainingEntry: TrainingRecord = {
+  date: new Date().toISOString().slice(0, 10),
+  start_time: "00:00",
+  title: "New Training",
+  duration_min: null,
+  sport: "Other",
+  note: null,
+  location: null,
+  use_default_alarm: false,
+  completed: false,
+  matched_activity_id: null,
+  match_score: null,
+  actual: null,
+};
+
+const sanitizeActual = (actual: Record<string, unknown> | null | undefined) => {
+  if (!actual || typeof actual !== "object") {
+    return null;
+  }
+
+  const { pace, link, ...rest } = actual as Record<string, unknown>;
+  return rest;
+};
+
+const normalizeTraining = (
+  partial: Record<string, unknown>,
+  currentEntryRaw: TrainingRecord = defaultTrainingEntry
+): TrainingRecord => {
+  const currentEntry: TrainingRecord = { ...defaultTrainingEntry, ...currentEntryRaw };
+
+  return {
+    ...currentEntry,
+    date:
+      typeof partial.date === "string" && partial.date.trim().length > 0
+        ? partial.date
+        : currentEntry.date,
+    start_time:
+      typeof partial.start_time === "string" && partial.start_time.trim().length > 0
+        ? partial.start_time
+        : currentEntry.start_time,
+    title:
+      typeof partial.title === "string" && partial.title.trim().length > 0
+        ? partial.title
+        : currentEntry.title,
+    duration_min:
+      typeof partial.duration_min === "number"
+        ? partial.duration_min
+        : partial.duration_min === null
+        ? null
+        : currentEntry.duration_min ?? null,
+    sport:
+      typeof partial.sport === "string" && partial.sport.trim().length > 0
+        ? partial.sport
+        : currentEntry.sport ?? "Other",
+    note:
+      typeof partial.note === "string"
+        ? partial.note
+        : partial.note === null
+        ? null
+        : currentEntry.note ?? null,
+    location:
+      typeof partial.location === "string"
+        ? partial.location
+        : partial.location === null
+        ? null
+        : currentEntry.location ?? null,
+    use_default_alarm:
+      typeof partial.use_default_alarm === "boolean"
+        ? partial.use_default_alarm
+        : currentEntry.use_default_alarm ?? false,
+    completed:
+      typeof partial.completed === "boolean" ? partial.completed : Boolean(currentEntry.completed),
+    matched_activity_id:
+      typeof partial.matched_activity_id === "number"
+        ? partial.matched_activity_id
+        : partial.matched_activity_id === null
+        ? null
+        : currentEntry.matched_activity_id ?? null,
+    match_score:
+      typeof partial.match_score === "number"
+        ? partial.match_score
+        : partial.match_score === null
+        ? null
+        : currentEntry.match_score ?? null,
+    actual:
+      partial.actual === undefined
+        ? currentEntry.actual ?? null
+        : sanitizeActual(partial.actual as Record<string, unknown> | null),
+  };
+};
+
 const runAction = async (action: ActionKey): Promise<{ success: boolean; output: string }> => {
   const entry = actionCommands[action];
   if (!entry) {
@@ -145,108 +238,44 @@ const trainingsDataPlugin = () => ({
               return;
             }
 
-            const sourceIndex = updated.sourceIndex;
-            if (typeof sourceIndex !== "number" || Number.isNaN(sourceIndex)) {
-              sendJson(res, 400, { error: "Training is missing a valid sourceIndex." });
-              return;
-            }
-
             const current = await readTrainingsFile();
             if (!Array.isArray(current?.trainings)) {
               current.trainings = [];
             }
 
-            if (!current.trainings[sourceIndex]) {
-              sendJson(res, 404, { error: `Training at index ${sourceIndex} not found.` });
-              return;
-            }
-
-            const sanitizeActual = (actual: Record<string, unknown> | null | undefined) => {
-              if (!actual || typeof actual !== "object") {
-                return null;
-              }
-
-              const { pace, link, ...rest } = actual as Record<string, unknown>;
-              return rest;
-            };
-
-            const { sourceIndex: _sourceIndex, id: _id, ...partial } = updated as Record<
+            const { sourceIndex: rawSourceIndex, id: _id, ...partial } = updated as Record<
               string,
               unknown
             >;
 
-            const currentEntry = current.trainings[sourceIndex] ?? {};
+            if (typeof rawSourceIndex !== "number" || Number.isNaN(rawSourceIndex)) {
+              const normalized = normalizeTraining(partial);
+              const index = current.trainings.length;
+              current.trainings.push(normalized);
+              await writeTrainingsFile(current);
+              server.watcher.emit("change", trainingsJsonPath);
+              sendJson(res, 200, {
+                success: true,
+                training: normalized,
+                index,
+              });
+              return;
+            }
 
-            const normalized = {
-              ...currentEntry,
-              date:
-                typeof partial.date === "string" && partial.date.trim().length > 0
-                  ? partial.date
-                  : currentEntry.date,
-              start_time:
-                typeof partial.start_time === "string" && partial.start_time.trim().length > 0
-                  ? partial.start_time
-                  : currentEntry.start_time,
-              title:
-                typeof partial.title === "string" && partial.title.trim().length > 0
-                  ? partial.title
-                  : currentEntry.title,
-              duration_min:
-                typeof partial.duration_min === "number"
-                  ? partial.duration_min
-                  : partial.duration_min === null
-                  ? null
-                  : currentEntry.duration_min ?? null,
-              sport:
-                typeof partial.sport === "string" && partial.sport.trim().length > 0
-                  ? partial.sport
-                  : currentEntry.sport ?? "Other",
-              note:
-                typeof partial.note === "string"
-                  ? partial.note
-                  : partial.note === null
-                  ? null
-                  : currentEntry.note ?? null,
-              location:
-                typeof partial.location === "string"
-                  ? partial.location
-                  : partial.location === null
-                  ? null
-                  : currentEntry.location ?? null,
-              use_default_alarm:
-                typeof partial.use_default_alarm === "boolean"
-                  ? partial.use_default_alarm
-                  : currentEntry.use_default_alarm ?? false,
-              completed:
-                typeof partial.completed === "boolean"
-                  ? partial.completed
-                  : Boolean(currentEntry.completed),
-              matched_activity_id:
-                typeof partial.matched_activity_id === "number"
-                  ? partial.matched_activity_id
-                  : partial.matched_activity_id === null
-                  ? null
-                  : currentEntry.matched_activity_id ?? null,
-              match_score:
-                typeof partial.match_score === "number"
-                  ? partial.match_score
-                  : partial.match_score === null
-                  ? null
-                  : currentEntry.match_score ?? null,
-              actual:
-                partial.actual === undefined
-                  ? currentEntry.actual ?? null
-                  : sanitizeActual(partial.actual as Record<string, unknown> | null),
-            };
+            if (!current.trainings[rawSourceIndex]) {
+              sendJson(res, 404, { error: `Training at index ${rawSourceIndex} not found.` });
+              return;
+            }
 
-            current.trainings[sourceIndex] = normalized;
+            const normalized = normalizeTraining(partial, current.trainings[rawSourceIndex]);
+            current.trainings[rawSourceIndex] = normalized;
             await writeTrainingsFile(current);
             server.watcher.emit("change", trainingsJsonPath);
 
             sendJson(res, 200, {
               success: true,
-              training: current.trainings[sourceIndex],
-              index: sourceIndex,
+              training: current.trainings[rawSourceIndex],
+              index: rawSourceIndex,
             });
           } catch (error) {
             console.error("[trainings-data] failed to update trainings.json", error);
@@ -256,6 +285,38 @@ const trainingsDataPlugin = () => ({
         }
 
         sendJson(res, 405, { error: `Method ${req.method} not allowed.` });
+        return;
+      }
+
+      if (url.startsWith("/api/trainings/")) {
+        if (req.method !== "DELETE") {
+          sendJson(res, 405, { error: `Method ${req.method} not allowed.` });
+          return;
+        }
+
+        const indexStr = url.replace("/api/trainings/", "");
+        const index = Number.parseInt(indexStr, 10);
+        if (Number.isNaN(index)) {
+          sendJson(res, 400, { error: "Training index must be a number." });
+          return;
+        }
+
+        try {
+          const current = await readTrainingsFile();
+          if (!Array.isArray(current?.trainings) || !current.trainings[index]) {
+            sendJson(res, 404, { error: `Training at index ${index} not found.` });
+            return;
+          }
+
+          current.trainings.splice(index, 1);
+          await writeTrainingsFile(current);
+          server.watcher.emit("change", trainingsJsonPath);
+
+          sendJson(res, 200, { success: true, index });
+        } catch (error) {
+          console.error("[trainings-data] failed to delete training", error);
+          sendJson(res, 500, { error: "Failed to delete training." });
+        }
         return;
       }
 

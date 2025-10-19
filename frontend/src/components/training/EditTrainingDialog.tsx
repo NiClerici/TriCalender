@@ -27,6 +27,7 @@ interface EditTrainingDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onSave: (training: Training) => Promise<void>;
+  onDelete?: (training: Training) => Promise<void>;
 }
 
 export function EditTrainingDialog({
@@ -34,10 +35,12 @@ export function EditTrainingDialog({
   open,
   onOpenChange,
   onSave,
+  onDelete,
 }: EditTrainingDialogProps) {
   const { toast } = useToast();
   const [formData, setFormData] = useState<Training | null>(training);
   const [isSaving, setIsSaving] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // Update formData when training prop changes
   useEffect(() => {
@@ -68,6 +71,31 @@ export function EditTrainingDialog({
       });
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!formData || !onDelete || typeof formData.sourceIndex !== "number") {
+      return;
+    }
+
+    setIsDeleting(true);
+    try {
+      await onDelete(formData);
+      toast({
+        title: "Training gelöscht",
+        description: "Der Eintrag wurde entfernt.",
+      });
+      onOpenChange(false);
+    } catch (error) {
+      console.error("Failed to delete training", error);
+      toast({
+        title: "Löschen fehlgeschlagen",
+        description: "Bitte erneut versuchen. Details siehe Konsole.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -240,13 +268,28 @@ export function EditTrainingDialog({
           )}
         </div>
 
-        <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
-            Cancel
-          </Button>
-          <Button onClick={handleSave} disabled={isSaving}>
-            {isSaving ? "Saving..." : "Save Changes"}
-          </Button>
+        <DialogFooter className="flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          {onDelete && typeof formData.sourceIndex === "number" && (
+            <Button
+              variant="destructive"
+              onClick={handleDelete}
+              disabled={isSaving || isDeleting}
+            >
+              {isDeleting ? "Deleting..." : "Delete"}
+            </Button>
+          )}
+          <div className="flex w-full justify-end gap-2 sm:w-auto">
+            <Button
+              variant="outline"
+              onClick={() => onOpenChange(false)}
+              disabled={isSaving || isDeleting}
+            >
+              Cancel
+            </Button>
+            <Button onClick={handleSave} disabled={isSaving || isDeleting}>
+              {isSaving ? "Saving..." : "Save Changes"}
+            </Button>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

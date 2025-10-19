@@ -1,49 +1,5 @@
 [
   {
-    "activity_id": 16052905128,
-    "title": "Afternoon Weight Training",
-    "sport_type": "WeightTraining",
-    "start_time_local": "2025-10-06T16:38:01Z",
-    "elapsed_time_min": 65.6,
-    "calories": null,
-    "distance_km": 0.0,
-    "moving_time_min": 65.6,
-    "elevation_gain_m": 0,
-    "avg_hr_bpm": 108.3,
-    "max_hr_bpm": 149.0,
-    "avg_cadence_raw": null
-  },
-  {
-    "activity_id": 16065597333,
-    "title": "Evening Run",
-    "sport_type": "Run",
-    "start_time_local": "2025-10-07T18:54:11Z",
-    "elapsed_time_min": 33.416666666666664,
-    "calories": null,
-    "distance_km": 5.0846,
-    "moving_time_min": 23.3,
-    "elevation_gain_m": 24.0,
-    "pace_min_per_km": 4.582531390340024,
-    "pace_min_per_km_str": "4:35",
-    "avg_hr_bpm": 175.0,
-    "max_hr_bpm": 198.0,
-    "avg_cadence_spm": 158.4
-  },
-  {
-    "activity_id": 16076052671,
-    "title": "Afternoon Weight Training",
-    "sport_type": "WeightTraining",
-    "start_time_local": "2025-10-08T16:59:41Z",
-    "elapsed_time_min": 61.4,
-    "calories": null,
-    "distance_km": 0.0,
-    "moving_time_min": 61.4,
-    "elevation_gain_m": 0,
-    "avg_hr_bpm": 100.2,
-    "max_hr_bpm": 151.0,
-    "avg_cadence_raw": null
-  },
-  {
     "activity_id": 16085956101,
     "title": "Afternoon Run",
     "sport_type": "Run",
@@ -106,5 +62,36 @@
     "avg_hr_bpm": 126.4,
     "max_hr_bpm": 148.0,
     "avg_cadence_rpm": 65.6
+  },
+  {
+    "activity_id": 16149410717,
+    "title": "Afternoon Run -Z2",
+    "sport_type": "Run",
+    "start_time_local": "2025-10-15T15:34:02Z",
+    "elapsed_time_min": 51.86666666666667,
+    "calories": null,
+    "distance_km": 8.7843,
+    "moving_time_min": 51.18333333333333,
+    "elevation_gain_m": 48.0,
+    "pace_min_per_km": 5.827505827505828,
+    "pace_min_per_km_str": "5:50",
+    "avg_hr_bpm": 160.4,
+    "max_hr_bpm": 181.0,
+    "avg_cadence_spm": 155.6
+  },
+  {
+    "activity_id": 16179040124,
+    "title": "Schwümmtraining mit Gabriele",
+    "sport_type": "Swim",
+    "start_time_local": "2025-10-18T11:10:14Z",
+    "elapsed_time_min": 61.0,
+    "calories": null,
+    "distance_km": 0.8981,
+    "moving_time_min": 61.0,
+    "elevation_gain_m": 0.0,
+    "pace_sec_per_100m": 408.16326530612247,
+    "pace_per_100m_str": "6:48",
+    "avg_hr_bpm": 142.2,
+    "max_hr_bpm": 190.0
   }
 ]

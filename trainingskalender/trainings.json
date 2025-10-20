@@ -201,10 +201,11 @@
     {
       "date": "2025-10-19",
       "start_time": "13:30",
+      "title": "Long Run 30 km mit Meier",
       "duration_min": 180,
       "sport": "Run",
-      "title": "Long Run 30 km",
       "note": "Konstant Z2 (6:00/km), weicher Untergrund (Wald/Tartan). Ruhige Nase/Atmung. Fuel leicht antesten (30–40 g KH/h).\n\nStrava Summary:\nStrecke: 22.0 km\nPace: 5:58/km\nDauer: 131 min\nHF Ø/Max 161/181 bpm\nHöhenmeter 56 m\nKadenz 156 spm\nStrava Link: https://www.strava.com/activities/16192430012",
+      "location": "Aarau,Aargau",
       "use_default_alarm": true,
       "completed": true,
       "matched_activity_id": 16192430012,
@@ -223,9 +224,9 @@
         "pace_min_per_km_str": "5:58",
         "avg_hr_bpm": 161.1,
         "max_hr_bpm": 181,
-        "avg_cadence_spm": 156.4
-      },
-      "location": "Aarau,Aargau"
+        "avg_cadence_spm": 156.4,
+        "duration_min": 143.95
+      }
     },
     {
       "date": "2025-10-21",

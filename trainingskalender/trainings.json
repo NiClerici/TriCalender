@@ -234,13 +234,28 @@
       "title": "Bike Z2 – Ökonomie",
       "duration_min": 60,
       "sport": "Bike",
-      "note": "Z2 kontinuierlich, Kadenz 85–95. 6×30 s hohe Kadenz mit 2′ Z2. Fokus: ruhiger Oberkörper, gleichmässiger Druck.",
+      "note": "Z2 kontinuierlich, Kadenz 85–95. 6×30 s hohe Kadenz mit 2′ Z2. Fokus: ruhiger Oberkörper, gleichmässiger Druck.\n\nStrava Summary:\nStrecke: 26.4 km\nGeschwindigkeit: 25.6 km/h\nDauer: 62 min\nHF Ø/Max 130/147 bpm\nLeistung Ø/Max 128/232 W\nKadenz 61 rpm\nStrava Link: https://www.strava.com/activities/16213366432",
       "location": null,
       "use_default_alarm": true,
-      "completed": false,
-      "matched_activity_id": null,
-      "match_score": null,
-      "actual": null
+      "completed": true,
+      "matched_activity_id": 16213366432,
+      "match_score": 1.686,
+      "actual": {
+        "activity_id": 16213366432,
+        "title": "Afternoon Ride",
+        "sport_type": "Ride",
+        "start_time_local": "2025-10-21T16:58:05Z",
+        "elapsed_time_min": 62.06666666666667,
+        "calories": null,
+        "distance_km": 26.448400000000003,
+        "moving_time_min": 62.06666666666667,
+        "elevation_gain_m": 0,
+        "avg_watts": 128.4,
+        "max_watts": 232,
+        "avg_hr_bpm": 129.8,
+        "max_hr_bpm": 147.0,
+        "avg_cadence_rpm": 61.3
+      }
     },
     {
       "date": "2025-10-22",

@@ -1,21 +1,5 @@
 [
   {
-    "activity_id": 16117171899,
-    "title": "Afternoon Ride",
-    "sport_type": "Ride",
-    "start_time_local": "2025-10-12T14:07:55Z",
-    "elapsed_time_min": 62.15,
-    "calories": null,
-    "distance_km": 20.087,
-    "moving_time_min": 62.15,
-    "elevation_gain_m": 0,
-    "avg_watts": 113.4,
-    "max_watts": 348,
-    "avg_hr_bpm": 130.9,
-    "max_hr_bpm": 155.0,
-    "avg_cadence_rpm": 59.6
-  },
-  {
     "activity_id": 16138900100,
     "title": "Afternoon Ride",
     "sport_type": "Ride",
@@ -93,5 +77,36 @@
     "avg_hr_bpm": 129.8,
     "max_hr_bpm": 147.0,
     "avg_cadence_rpm": 61.3
+  },
+  {
+    "activity_id": 16223184037,
+    "title": "Afternoon Swim",
+    "sport_type": "Swim",
+    "start_time_local": "2025-10-22T16:54:42Z",
+    "elapsed_time_min": 36.0,
+    "calories": null,
+    "distance_km": 1.275,
+    "moving_time_min": 21.683333333333334,
+    "elevation_gain_m": 0,
+    "pace_sec_per_100m": 102.04081632653062,
+    "pace_per_100m_str": "1:42",
+    "avg_hr_bpm": 135.1,
+    "max_hr_bpm": 170.0
+  },
+  {
+    "activity_id": 16233746160,
+    "title": "Afternoon Run",
+    "sport_type": "Run",
+    "start_time_local": "2025-10-23T17:56:37Z",
+    "elapsed_time_min": 30.116666666666667,
+    "calories": null,
+    "distance_km": 4.7305,
+    "moving_time_min": 30.0,
+    "elevation_gain_m": 20.0,
+    "pace_min_per_km": 6.341958396752917,
+    "pace_min_per_km_str": "6:21",
+    "avg_hr_bpm": 148.1,
+    "max_hr_bpm": 180.0,
+    "avg_cadence_spm": 153.6
   }
 ]

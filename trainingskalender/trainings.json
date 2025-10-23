@@ -274,7 +274,7 @@
         "title": "Afternoon Swim",
         "sport_type": "Swim",
         "start_time_local": "2025-10-22T16:54:42Z",
-        "elapsed_time_min": 36.0,
+        "elapsed_time_min": 36,
         "calories": null,
         "distance_km": 1.275,
         "moving_time_min": 21.683333333333334,
@@ -282,7 +282,7 @@
         "pace_sec_per_100m": 102.04081632653062,
         "pace_per_100m_str": "1:42",
         "avg_hr_bpm": 135.1,
-        "max_hr_bpm": 170.0
+        "max_hr_bpm": 170
       }
     },
     {
@@ -355,11 +355,12 @@
     },
     {
       "date": "2025-10-27",
-      "start_time": "18:00",
+      "start_time": "07:00",
+      "title": "Easy Run – Technik & Economy",
       "duration_min": 60,
       "sport": "Run",
-      "title": "Easy Run – Technik & Economy",
       "note": "Z2 (5:55–6:10/km). Fokus: Kadenz 170–180 spm, kurze Bodenkontaktzeit. 6×20 s Strides am Ende.",
+      "location": null,
       "use_default_alarm": true,
       "completed": false,
       "matched_activity_id": null,
@@ -478,6 +479,20 @@
       "title": "Long Bike Z2 (Deload-Variante)",
       "note": "75–90′ Z2. Lockerer Abschluss der Deload-Woche. Leichte Trink-/Fuel-Routine beibehalten.",
       "use_default_alarm": true,
+      "completed": false,
+      "matched_activity_id": null,
+      "match_score": null,
+      "actual": null
+    },
+    {
+      "date": "2025-10-27",
+      "start_time": "06:00",
+      "title": "Training Technique",
+      "duration_min": 45,
+      "sport": "Swim",
+      "note": "Training Technique - Try to get a hole 50m",
+      "location": "Suhr, Aargau",
+      "use_default_alarm": false,
       "completed": false,
       "matched_activity_id": null,
       "match_score": null,

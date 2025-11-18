@@ -4,292 +4,257 @@ PRODID:-//TriCalender//DE
 X-WR-CALNAME:Trainingskalender
 X-WR-TIMEZONE:Europe/Berlin
 BEGIN:VEVENT
-SUMMARY:Swim Technik – Atmung & Wasserlage
-DTSTART;TZID=Europe/Berlin:20251110T063000
-DTEND;TZID=Europe/Berlin:20251110T071500
-DTSTAMP:20251111T121023Z
-UID:7dc13d7182337f64636681cb9ac6aba4569f9ff3@trical.local
-SEQUENCE:0
-DESCRIPTION:Swim\nDrills: Balance/Glide\, 6-Kick-Switch\, Catch-Up\, 3er-A
- tmung. Fokus: ruhiger Kopf\, langer Zug\, stabile Wasserlage.
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Swim Technik – Catch & hoher Ellbogen
-DTSTART;TZID=Europe/Berlin:20251112T160000
-DTEND;TZID=Europe/Berlin:20251112T165000
-DTSTAMP:20251111T121023Z
-UID:4663ed72430ee671932f729a6d055701ef91fdc7@trical.local
-SEQUENCE:0
-DESCRIPTION:Swim\n8×50 m Technik (EVF)\, 6×50 m Pull (ohne Paddles). Fok
- us: hoher Ellbogen\, sauberer Catch.
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Steady Run – Marathon-Tempo
-DTSTART;TZID=Europe/Berlin:20251113T180000
-DTEND;TZID=Europe/Berlin:20251113T190000
-DTSTAMP:20251111T121023Z
-UID:1e7f5c609c0515eaa7060745c132b385be0e9967@trical.local
-SEQUENCE:0
-DESCRIPTION:Run\n20′ MP/Z3 (5:25–5:40/km) mittig\, Rest Z2 (5:55–6:1
- 0/km). Atem ruhig\, Form stabil.
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Strength – Core/Hüfte/Glutes
-DTSTART;TZID=Europe/Berlin:20251114T173000
-DTEND;TZID=Europe/Berlin:20251114T180500
-DTSTAMP:20251111T121023Z
-UID:62ee83052f657a2a6a76ce36f1378468e84d2956@trical.local
-SEQUENCE:0
-DESCRIPTION:Workout\nEinbein (Split Squats/Step-ups)\, Pallof Press\, Hip 
- Thrust/Glute Bridge\, Waden exzentrisch.
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:Long Bike Z2 (Indoor/Gym)
-DTSTART;TZID=Europe/Berlin:20251115T090000
-DTEND;TZID=Europe/Berlin:20251115T104000
-DTSTAMP:20251111T121023Z
-UID:6757353c78028b6994c5e04e552c114a3c91d816@trical.local
+DTSTART;TZID=Europe/Berlin:20251115T150000
+DTEND;TZID=Europe/Berlin:20251115T160000
+DTSTAMP:20251118T144755Z
+UID:5890415aa15791f6e2efa9350051c4f5dcc1c3a5@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\nZ2 konstant. Kadenz 85–95. Fuel 30–40 g KH/h\, 500
- –750 ml/h trinken.
+DESCRIPTION:Bike\nZ2 konstant\, Basis-Kadenz 85–95. 2×5' hohe Kadenz (1
+ 00–110) mittig mit 5' Z2 dazwischen. Fuel 30–40 g KH/h\, 500–750 ml/
+ h trinken.\n\nStrava Summary:\nStrecke: 27.9 km\nGeschwindigkeit: 27.5 km/
+ h\nDauer: 61 min\nHF Ø/Max 141/156 bpm\nLeistung Ø/Max 142/391 W\nKadenz
+  63 rpm\nStrava Link: https://www.strava.com/activities/16466738935
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Brick Run easy
-DTSTART;TZID=Europe/Berlin:20251115T110000
-DTEND;TZID=Europe/Berlin:20251115T111500
-DTSTAMP:20251111T121023Z
-UID:06fb123fb73c4ab32a319f572aa1fcf42061a39e@trical.local
+DTSTART;TZID=Europe/Berlin:20251115T161500
+DTEND;TZID=Europe/Berlin:20251115T170000
+DTSTAMP:20251118T144755Z
+UID:851078e7fb5344accc08d8613327e873f0af50fb@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\nDirekt nach Bike. 10–15′ locker Z2 (5:55–6:10/km). 
- Schritte schnell\, locker.
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Long Run Z2
-DTSTART;TZID=Europe/Berlin:20251116T090000
-DTEND;TZID=Europe/Berlin:20251116T103000
-DTSTAMP:20251111T121023Z
-UID:b7b8361bc6c1d24d7345ece7bd07a2fd10e2b9d0@trical.local
-SEQUENCE:0
-DESCRIPTION:Run\nKonstant Z2 (5:55–6:10/km). Weicher Untergrund bevorzug
- t. Fuel 30–40 g KH/h.
+DESCRIPTION:Run\nDirekt nach Bike. 10–15' locker Z2 (5:55–6:10/km). HF
+  < 165 bpm. Schritte schnell\, locker.\n\nStrava Summary:\nStrecke: 8.5 km
+ \nPace: 5:09/km\nDauer: 44 min\nHF Ø/Max 178/190 bpm\nHöhenmeter 64 m\nK
+ adenz 156 spm\nStrava Link: https://www.strava.com/activities/16466745975
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Swim Technik – Rotation & Timing
-DTSTART;TZID=Europe/Berlin:20251117T063000
-DTEND;TZID=Europe/Berlin:20251117T072000
-DTSTAMP:20251111T121023Z
-UID:d7d9f2f733733fbe8e80bb85f18589b3e7dc2813@trical.local
+DTSTART;TZID=Europe/Berlin:20251117T060000
+DTEND;TZID=Europe/Berlin:20251117T062500
+DTSTAMP:20251118T144755Z
+UID:852746168881f832c164f775432c2e1e9fd5d0ec@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n4×(4×50 m Drill: 3-3-3\, Fäuste\, Einarmig\, Catch-Up
- ) + 4×50 m locker. Fokus: ruhige Rotation.
+DESCRIPTION:Swim\n~1300 m: 200 Einschwimmen\, 4×(4×50 m Drill: 3-3-3\, F
+ äuste\, Einarmig\, Catch-Up @ 20 s) + 4×50 m locker @ 30 s\, 200 Ausschw
+ immen. Fokus: ruhige Rotation.\n\nStrava Summary:\nStrecke: 1.1 km\nPace: 
+ 2:03 /100m\nDauer: 21 min\nHF Ø/Max 137/183 bpm\nPace 2:03 /100m\nStrava 
+ Link: https://www.strava.com/activities/16481730064
+LOCATION:Hallenbad Aarau
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Bike Sweet-Spot light
-DTSTART;TZID=Europe/Berlin:20251118T180000
-DTEND;TZID=Europe/Berlin:20251118T191500
-DTSTAMP:20251111T121023Z
-UID:9211343b88442837a4ac7b44e12676c2c1355c70@trical.local
+SUMMARY:Bike Sweet-Spot light + Kadenz
+DTSTART;TZID=Europe/Berlin:20251118T203000
+DTEND;TZID=Europe/Berlin:20251118T214500
+DTSTAMP:20251118T144755Z
+UID:ec615cc35b4bea83d7631ae78c8609e9846a6b03@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\n3×8′ Z3 (RPE 5–6) mit 4′ Z2. Kadenz 85–95.
+DESCRIPTION:Bike\n3×8' Z3 (RPE 5–6) mit 4' Z2. Basis-Kadenz 85–95. Am
+  Ende: 5×1' hohe Kadenz (100–110) mit 2' Z2.
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Swim Serien kurz + Technik
+SUMMARY:Easy Run + Strides
 DTSTART;TZID=Europe/Berlin:20251119T160000
 DTEND;TZID=Europe/Berlin:20251119T165000
-DTSTAMP:20251111T121023Z
-UID:6d8821b4e99eb44e4e541f3e41661ec24fb962ee@trical.local
+DTSTAMP:20251118T144755Z
+UID:b6d2eb6db1721945679edcf911dffa3e7d5e0204@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n12×100 m locker–moderat @ großzügige Pause. Alle 25
-  m Technikfokus einstreuen.
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Cruise-Intervalle – Schwelle
-DTSTART;TZID=Europe/Berlin:20251120T180000
-DTEND;TZID=Europe/Berlin:20251120T190000
-DTSTAMP:20251111T121023Z
-UID:17093ec3ffc3ab2bd4f611bb02b3a49394944350@trical.local
-SEQUENCE:0
-DESCRIPTION:Run\n5×4′ @ Z4 (4:45–5:00/km) mit 2′ locker (Z2 (5:55
- –6:10/km)). Ein-/Auslaufen in Z2 (5:55–6:10/km).
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Strength – Stabi & Schulterblatt
-DTSTART;TZID=Europe/Berlin:20251121T173000
-DTEND;TZID=Europe/Berlin:20251121T181000
-DTSTAMP:20251111T121023Z
-UID:e9f4bd8b0bfd477df83774d8b704efc6dc2556dd@trical.local
-SEQUENCE:0
-DESCRIPTION:Workout\nGlutes/Hüfte/Core\, Schulterblattstabilität. 35–4
- 5′\, kontrollierte Qualität.
+DESCRIPTION:Run\n40' Z2 (5:55–6:10/km)\, dann 6×20 s Strides mit voller
+  Erholung. HF < 165 bpm im Z2-Teil. Fokus: lockere Beine\, saubere Form.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Long Bike Z2 (Indoor/Gym)
-DTSTART;TZID=Europe/Berlin:20251122T090000
-DTEND;TZID=Europe/Berlin:20251122T105000
-DTSTAMP:20251111T121023Z
-UID:ac27ac335843e1858a550112c1211ff4bad3030a@trical.local
+DTSTART;TZID=Europe/Berlin:20251123T180000
+DTEND;TZID=Europe/Berlin:20251123T195000
+DTSTAMP:20251118T144755Z
+UID:e65b90154aad4540ba69c020730d25b83b164a8d@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\nZ2 konstant. 2×5′ hohe Kadenz (100–110) mittig. Fue
- l 40–50 g KH/h.
+DESCRIPTION:Bike\nZ2 konstant\, Basis-Kadenz 85–95. 3×5' hohe Kadenz (1
+ 00–110) mit 3' Z2 dazwischen (Beginn nach 30'). Fuel 40–50 g KH/h\, 60
+ 0–800 ml/h.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Brick Run easy
-DTSTART;TZID=Europe/Berlin:20251122T110500
-DTEND;TZID=Europe/Berlin:20251122T112000
-DTSTAMP:20251111T121023Z
-UID:0bdf20e931c08d4ebe05bd7184612e3ddb631175@trical.local
+DTSTART;TZID=Europe/Berlin:20251123T200000
+DTEND;TZID=Europe/Berlin:20251123T201500
+DTSTAMP:20251118T144755Z
+UID:0af7eb9558487f1a3a60eb72e2171c7892100443@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\nDirekt nach Bike. 10–15′ Z2 (5:55–6:10/km). Fokus: 
- Schrittfrequenz 170–180 spm.
+DESCRIPTION:Run\nDirekt nach Bike. 10–15' Z2 (5:55–6:10/km). HF < 165 
+ bpm. Fokus: Schrittfrequenz 170–180 spm\, lockere Schultern.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Long Run – progressiv
-DTSTART;TZID=Europe/Berlin:20251123T090000
-DTEND;TZID=Europe/Berlin:20251123T104000
-DTSTAMP:20251111T121023Z
-UID:35b6ae15161919e68364188e9f6c8e54bed96daa@trical.local
+DTSTART;TZID=Europe/Berlin:20251122T150000
+DTEND;TZID=Europe/Berlin:20251122T164000
+DTSTAMP:20251118T144755Z
+UID:ddafd6fbd8c56b6e80a934eb09bcc310d4b85f73@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\n80′ Z2 (5:55–6:10/km) → letzte 20′ @ MP/Z3 (5:25
- –5:40/km). Fuel 40–50 g KH/h.
+DESCRIPTION:Run\n80' Z2 (5:55–6:10/km) → letzte 20' @ MP/Z3 (5:25–5:
+ 40/km)\, ~16.5 km gesamt. HF im Z2-Teil < 165 bpm\, im MP-Teil < 180 bpm. 
+ Fuel 40–50 g KH/h.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Swim Technik – EVF & Zugweg
-DTSTART;TZID=Europe/Berlin:20251124T063000
-DTEND;TZID=Europe/Berlin:20251124T072000
-DTSTAMP:20251111T121023Z
-UID:71bc57e7ec91760e2b5402a4555a8f5274a47fc1@trical.local
+DTSTART;TZID=Europe/Berlin:20251124T060000
+DTEND;TZID=Europe/Berlin:20251124T065000
+DTSTAMP:20251118T144755Z
+UID:fdfd02b76e07b7f7852ef70bcb78fd8fa819245e@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n6×50 m Drill (EVF/Sculling) + 8×50 m Pull (ohne Paddle
- s). Fokus: hoher Ellbogen\, Druck nach hinten.
+DESCRIPTION:Swim\n~1200 m: 200 Einschwimmen\, 6×50 m Drill (EVF/Sculling)
+  @ 20 s\, 8×50 m Pull (ohne Paddles) @ 15 s\, 4×50 m locker @ 30 s\, 200
+  Ausschwimmen. Fokus: hoher Ellbogen\, Druck nach hinten.
+LOCATION:Hallenbad Aarau
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:Easy Run – Technik & Economy
-DTSTART;TZID=Europe/Berlin:20251125T180000
-DTEND;TZID=Europe/Berlin:20251125T190000
-DTSTAMP:20251111T121023Z
-UID:25a5e36cbb6c97b15bb1f77ca240e8746559947d@trical.local
+SUMMARY:Bike Z2 – Ökonomie
+DTSTART;TZID=Europe/Berlin:20251126T180000
+DTEND;TZID=Europe/Berlin:20251126T190000
+DTSTAMP:20251118T144755Z
+UID:45ee1daf82dac7ba62a2aa997d189668b0d44dd1@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\nZ2 (5:55–6:10/km). Fokus: kurze Bodenkontaktzeit\, aufr
- echt\, 6×20 s Strides am Ende.
+DESCRIPTION:Bike\nZ2 kontinuierlich\, Basis-Kadenz 85–95. 6×30 s hohe K
+ adenz (100–110) mit 2' Z2 dazwischen. Fokus: ruhiger Oberkörper\, gleic
+ hmässiger Druck.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Swim Mix – Technik + kurze Serien
-DTSTART;TZID=Europe/Berlin:20251126T160000
-DTEND;TZID=Europe/Berlin:20251126T165500
-DTSTAMP:20251111T121023Z
-UID:420459fbace67edf9771f3a4bad4653afd3d44fd@trical.local
+DTSTART;TZID=Europe/Berlin:20251127T160000
+DTEND;TZID=Europe/Berlin:20251127T165500
+DTSTAMP:20251118T144755Z
+UID:de666b44a3e88720d495cc001f31e2ff696d77a3@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n8×75 m @ locker–moderat\, jede 3. Bahn Technik. Lange
- \, ruhige Züge.
+DESCRIPTION:Swim\n~1300 m: 200 Einschwimmen\, 8×75 m @ locker–moderat (
+ jede 3. Bahn Technik-Fokus) @ 20 s\, 4×50 m locker @ 30 s\, 200 Ausschwim
+ men. Lange\, ruhige Züge.
+LOCATION:Hallenbad Aarau
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Marathon-Pace Blöcke
-DTSTART;TZID=Europe/Berlin:20251127T180000
-DTEND;TZID=Europe/Berlin:20251127T191000
-DTSTAMP:20251111T121023Z
-UID:45139cd3f34a85e2353a3c4722c89dbdb3855049@trical.local
+DTSTART;TZID=Europe/Berlin:20251128T180000
+DTEND;TZID=Europe/Berlin:20251128T191000
+DTSTAMP:20251118T144755Z
+UID:76f8b52ec46ee0ed82a0ec7b3d8ff817241bf116@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\n3×10′ @ MP/Z3 (5:25–5:40/km) mit 3′ locker (Z2 (5:
- 55–6:10/km)). Ein-/Auslaufen Z2 (5:55–6:10/km).
+DESCRIPTION:Run\n15' Einlaufen Z2 (5:55–6:10/km)\, 3×10' @ MP/Z3 (5:25
+ –5:40/km) mit 3' locker (Z2)\, 10' Auslaufen Z2. HF im MP < 180 bpm.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Strength – Einbein/Antirotation
-DTSTART;TZID=Europe/Berlin:20251128T173000
-DTEND;TZID=Europe/Berlin:20251128T181000
-DTSTAMP:20251111T121023Z
-UID:abd94a7d08c403e16644b07be9059e9192df096b@trical.local
+DTSTART;TZID=Europe/Berlin:20251129T173000
+DTEND;TZID=Europe/Berlin:20251129T181000
+DTSTAMP:20251118T144755Z
+UID:c04005385b5cb32a3f2f45bb4c5085f87b70fbe5@trical.local
 SEQUENCE:0
-DESCRIPTION:Workout\nSplit Squats/Step-ups\, Pallof Press\, Hip Hinge/Good
-  Mornings leicht\, Waden exzentrisch.
+DESCRIPTION:Workout\nSplit Squats 3×8/Seite\, Step-ups 3×10/Seite\, Pall
+ of Press 3×12\, Hip Hinge/Good Mornings leicht 3×10\, Waden exzentrisch 
+ 3×15.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Long Bike Z2 (Indoor/Gym)
-DTSTART;TZID=Europe/Berlin:20251129T090000
-DTEND;TZID=Europe/Berlin:20251129T110000
-DTSTAMP:20251111T121023Z
-UID:35944af750294f1954653923d544780c762d6c42@trical.local
+DTSTART;TZID=Europe/Berlin:20251130T090000
+DTEND;TZID=Europe/Berlin:20251130T110000
+DTSTAMP:20251118T144755Z
+UID:31352b4f881f4185b76185b580b030772f93b498@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\nZ2 konstant. 3×5′ hohe Kadenz (100–110) mit 3′ Z2
- . Fuel 40–60 g KH/h.
+DESCRIPTION:Bike\nZ2 konstant\, Basis-Kadenz 85–95. 3×5' hohe Kadenz (1
+ 00–110) mit 3' Z2 dazwischen (Beginn nach 40'). Fuel 40–60 g KH/h\, 70
+ 0–900 ml/h.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Brick Run steady
-DTSTART;TZID=Europe/Berlin:20251129T111500
-DTEND;TZID=Europe/Berlin:20251129T113500
-DTSTAMP:20251111T121023Z
-UID:52106843828e8813ff2bcafff9c57a7a47a9516a@trical.local
+DTSTART;TZID=Europe/Berlin:20251130T111500
+DTEND;TZID=Europe/Berlin:20251130T113500
+DTSTAMP:20251118T144755Z
+UID:efbc72a14eea936e024950a86328917e685d069f@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\nDirekt nach Bike. 20′ Z2 (5:55–6:10/km) mit letzten 5
- ′ @ MP/Z3 (5:25–5:40/km) Gefühl (ohne Überziehen).
+DESCRIPTION:Run\nDirekt nach Bike. 15' Z2 (5:55–6:10/km)\, letzte 5' @ M
+ P/Z3 (5:25–5:40/km) Gefühl (ohne Überziehen). HF < 165 bpm im Z2-Teil\
+ , < 180 bpm im MP-Teil.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Long Run – steady finish
-DTSTART;TZID=Europe/Berlin:20251130T090000
-DTEND;TZID=Europe/Berlin:20251130T105000
-DTSTAMP:20251111T121023Z
-UID:1c15a4721c970846e47e590268fc409a0a6a7be5@trical.local
+DTSTART;TZID=Europe/Berlin:20251201T090000
+DTEND;TZID=Europe/Berlin:20251201T111000
+DTSTAMP:20251118T144755Z
+UID:c8dd780905523c9ca26b3b878ae999ced4554007@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\n90′ Z2 (5:55–6:10/km) → letzte 20′ @ MP/Z3 (5:25
- –5:40/km). Fokus: Form halten\, Ökonomie.
+DESCRIPTION:Run\n110' Z2 (5:55–6:10/km) → letzte 20' @ MP/Z3 (5:25–5
+ :40/km)\, ~22 km gesamt. HF im Z2 < 165 bpm\, im MP < 180 bpm. Fokus: Form
+  halten\, Ökonomie. Fuel 40–60 g KH/h.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Swim locker – Technik konsolidieren
-DTSTART;TZID=Europe/Berlin:20251201T063000
-DTEND;TZID=Europe/Berlin:20251201T071000
-DTSTAMP:20251111T121023Z
-UID:f96177beffe4d634380f4f323a49af7e4df32845@trical.local
+DTSTART;TZID=Europe/Berlin:20251202T063000
+DTEND;TZID=Europe/Berlin:20251202T071000
+DTSTAMP:20251118T144755Z
+UID:4d7ddd8e98ab55ef72b07051b2550cb9e540d5e4@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n6×50 m Technik + 6×50 m locker. Viel Gleiten\, ruhiges
-  Tempo.
+DESCRIPTION:Swim\n~1000 m: 200 Einschwimmen locker\, 6×50 m Technik (Wass
+ erlage/Atmung) @ 30 s\, 6×50 m locker @ 30 s\, 200 Ausschwimmen. Viel Gle
+ iten\, ruhiges Tempo.
+LOCATION:Hallenbad Aarau
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Bike Z2 – Deload
-DTSTART;TZID=Europe/Berlin:20251202T180000
-DTEND;TZID=Europe/Berlin:20251202T185000
-DTSTAMP:20251111T121023Z
-UID:9c765a3ad7164ebdb5b8255001a1ea72ea823adc@trical.local
+DTSTART;TZID=Europe/Berlin:20251203T180000
+DTEND;TZID=Europe/Berlin:20251203T185000
+DTSTAMP:20251118T144755Z
+UID:3da6446c843ace2f5184374a210c6a5232160bb4@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\n50′ ruhig Z2. Gleichmässiger Druck\, entspannte Schul
- tern. Kein Druck.
+DESCRIPTION:Bike\n50' ruhig Z2\, Basis-Kadenz 85–95. Gleichmässiger Dru
+ ck\, entspannte Schultern. Kein Druck\, keine Kadenz-Drills.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Swim locker – Deload
-DTSTART;TZID=Europe/Berlin:20251203T160000
-DTEND;TZID=Europe/Berlin:20251203T164000
-DTSTAMP:20251111T121023Z
-UID:970faad61a150e51872bb7052b8ba6a45e088cc2@trical.local
+DTSTART;TZID=Europe/Berlin:20251204T160000
+DTEND;TZID=Europe/Berlin:20251204T164000
+DTSTAMP:20251118T144755Z
+UID:dfafbc8cd5ff85d7802e0e4f72895ef3de2cd2ca@trical.local
 SEQUENCE:0
-DESCRIPTION:Swim\n8×50 m locker\, Fokus Wasserlage & Atmung. Lange Pausen
- .
+DESCRIPTION:Swim\n~800 m: 200 Einschwimmen locker\, 8×50 m locker @ 30 s 
+ (Fokus Wasserlage & Atmung)\, 200 Ausschwimmen. Lange Pausen.
+LOCATION:Hallenbad Aarau
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Easy Run – Deload
-DTSTART;TZID=Europe/Berlin:20251204T180000
-DTEND;TZID=Europe/Berlin:20251204T184500
-DTSTAMP:20251111T121023Z
-UID:2c0e392f7a472704851425faa66698ad093890ad@trical.local
+DTSTART;TZID=Europe/Berlin:20251205T180000
+DTEND;TZID=Europe/Berlin:20251205T184500
+DTSTAMP:20251118T144755Z
+UID:3bf77993c56fc74c8a3718536ea27eb2862b11d7@trical.local
 SEQUENCE:0
-DESCRIPTION:Run\nZ2 (5:55–6:10/km). Locker\, gleichmässig\, keine Inten
- sität.
+DESCRIPTION:Run\nZ2 (5:55–6:10/km)\, ~7 km. Locker\, gleichmässig\, kei
+ ne Intensität. HF < 160 bpm.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Strength – Deload
 DTSTART;TZID=Europe/Berlin:20251206T090000
 DTEND;TZID=Europe/Berlin:20251206T093000
-DTSTAMP:20251111T121023Z
+DTSTAMP:20251118T144755Z
 UID:aff47db95467c8db290b696e56ae231f7523e0dc@trical.local
 SEQUENCE:0
-DESCRIPTION:Workout\n30′ reduziert: Core/Hüfte leicht\, Mobility 5–10
- ′.
+DESCRIPTION:Workout\n30' reduziert: Core/Hüfte leicht (2×8 statt 3×12)\
+ , Mobility 5–10'. Keine schweren Lasten.
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Long Bike Z2 (Deload-Variante)
 DTSTART;TZID=Europe/Berlin:20251207T090000
 DTEND;TZID=Europe/Berlin:20251207T102000
-DTSTAMP:20251111T121023Z
+DTSTAMP:20251118T144755Z
 UID:63d21d37654fc48cec0ce4fda5fe21529b0ed151@trical.local
 SEQUENCE:0
-DESCRIPTION:Bike\n70–80′ Z2. Lockerer Abschluss. Fuel-Routine leicht b
- eibehalten.
+DESCRIPTION:Bike\n70–80' Z2\, Basis-Kadenz 85–95. Lockerer Abschluss. 
+ Fuel-Routine leicht beibehalten (30 g KH/h). Keine Kadenz-Drills.
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Night Ride
+DTSTART;TZID=Europe/Berlin:20251110T210000
+DTEND;TZID=Europe/Berlin:20251110T213000
+DTSTAMP:20251118T144755Z
+UID:d75e80d9118f49c0755b5be5d54b6840f4eec047@trical.local
+SEQUENCE:0
+DESCRIPTION:Bike\nStrava Summary:\nStrecke: 11.5 km\nGeschwindigkeit: 21.1
+  km/h\nDauer: 33 min\nHF Ø/Max 145/163 bpm\nLeistung Ø/Max 124/291 W\nKa
+ denz 62 rpm\nStrava Link: https://www.strava.com/activities/16420866996
 END:VEVENT
 END:VCALENDAR

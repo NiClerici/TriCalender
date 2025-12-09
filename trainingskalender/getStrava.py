@@ -13,7 +13,7 @@ CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 REFRESH_TOKEN = os.environ["REFRESH_TOKEN"]
 
 EXPORT_PATH = Path(__file__).parent / "exportStravaTraining.json"
-days_back = 10 # wie viele Tage zurück sollen Aktivitäten geprüft werden
+days_back = 25 # wie viele Tage zurück sollen Aktivitäten geprüft werden
 after_ts = int((dt.datetime.utcnow() - dt.timedelta(days = days_back)).timestamp())
 
 # ==== Helpers ====
